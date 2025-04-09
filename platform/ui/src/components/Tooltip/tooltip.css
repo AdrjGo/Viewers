@@ -41,6 +41,13 @@
   left: 0;
 }
 
+@media (min-width: 640px) {
+  .tooltip.tooltip-bottom-left {
+    left: auto;
+  }
+}
+
+
 .tooltip.tooltip-bottom-right {
   @apply mt-1 pt-2;
   right: 0;

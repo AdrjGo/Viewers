@@ -66,7 +66,7 @@ const DefaultListItemRenderer = props => {
         'flex h-8 w-full select-none flex-row items-center p-3',
         'whitespace-pre text-base',
         className,
-        `${isActive ? 'hover:opacity-80' : 'hover:bg-primary-dark '}`
+        `${isActive ? 'hover:opacity-80' : 'hover:bg-primary-dark'}`
       )}
     >
       {icon && (
@@ -101,6 +101,7 @@ const SplitButton = ({
   const toggleExpanded = () => setState({ ...state, isExpanded: !state.isExpanded });
   const setHover = hovering => setState({ ...state, isHovering: hovering });
   const collapse = () => setState({ ...state, isExpanded: false });
+  const [coords, setCoords] = useState({ x: 999999, y: 999999 });
 
   const listItemRenderer = renderer || DefaultListItemRenderer;
   const primaryClassNames = classNames(

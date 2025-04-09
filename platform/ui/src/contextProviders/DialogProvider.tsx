@@ -161,17 +161,18 @@ const DialogProvider = ({ children, service = null }) => {
         showOverlay,
       } = dialog;
 
-      let position = (preservePosition && lastDialogPosition) || defaultPosition;
-      if (centralize) {
-        position = centerPositions.find(position => position.id === id);
+      let position = { x: 0, y: 0 }; // Siempre comienza en (0,0) cuando está centrado
+
+      if (!centralize) {
+        position = (preservePosition && lastDialogPosition) || defaultPosition || { x: 0, y: 0 };
       }
 
       const dragableItem = () => (
         <Draggable
           key={id}
           disabled={!isDraggable}
-          position={position}
-          defaultPosition={position}
+          // position={position}
+          // defaultPosition={position}
           bounds="parent"
           onStart={event => {
             const e = event || (typeof window !== 'undefined' && window.event);
@@ -209,7 +210,7 @@ const DialogProvider = ({ children, service = null }) => {
               isDragging && 'dragging',
               isDraggable && 'draggable'
             )}
-            style={{ zIndex: '999', position: 'absolute' }}
+            style={{ zIndex: '999' }}
             onClick={() => _bringToFront(id)}
           >
             <DialogContent
@@ -222,13 +223,15 @@ const DialogProvider = ({ children, service = null }) => {
 
       const withOverlay = component => {
         const background = 'bg-black bg-opacity-50';
-        const overlay = 'fixed z-50 left-0 top-0 w-full h-full overflow-auto';
+        const overlay = 'fixed z-50';
         return (
-          <div
-            className={classNames(overlay, background)}
-            key={id}
-          >
-            {component}
+          <div className="flex h-auto w-screen items-center justify-center bg-black bg-opacity-50">
+            <div
+              className={classNames(overlay, background)}
+              key={id}
+            >
+              {component}
+            </div>
           </div>
         );
       };
@@ -285,7 +288,7 @@ const DialogProvider = ({ children, service = null }) => {
     <DialogContext.Provider value={contextValue}>
       {!isEmpty() && (
         <div
-          className="absolute h-full w-full"
+          className="absolute flex h-full w-full"
           onKeyDown={onKeyDownHandler}
         >
           {renderDialogs()}

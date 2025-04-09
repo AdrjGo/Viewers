@@ -39,7 +39,7 @@ const Input = ({
   return (
     <div className={classnames('flex flex-1 flex-col', containerClassName)}>
       <Label
-        className={labelClassName}
+        className={classnames(labelClassName, 'max-sm:text-xs')}
         text={label}
         children={labelChildren}
       ></Label>

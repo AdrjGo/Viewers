@@ -121,7 +121,7 @@ export function WindowLevelActionMenu({
         'flex shrink-0 cursor-pointer rounded active:text-white text-primary-light',
         isLight ? ' hover:bg-secondary-dark' : 'hover:bg-secondary-light/60'
       )}
-      menuStyle={{ maxHeight: vpHeight - 32, minWidth: 218 }}
+      menuStyle={{ maxHeight: vpHeight - 32, minWidth: window.innerWidth > 768 ? 218 : 135 }}
       onVisibilityChange={() => {
         setVpHeight(element.clientHeight);
       }}

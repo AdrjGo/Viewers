@@ -46,16 +46,16 @@ export function VolumeRenderingPresetsContent({
             <InputFilterText
               value={searchValue}
               onDebounceChange={handleSearchChange}
-              placeholder={'Search all'}
+              placeholder={'Buscar'}
             />
           </div>
         </div>
         <div className="ohif-scrollbar overflow h-[385px] w-full overflow-y-auto">
-          <div className="grid grid-cols-4 gap-3 pt-2 pr-3">
+          <div className="grid grid-cols-4 gap-3 pt-2 pr-3 max-sm:grid-cols-2">
             {filteredPresets.map((preset, index) => (
               <div
                 key={index}
-                className="flex cursor-pointer flex-col items-start"
+                className="flex cursor-pointer flex-col items-start max-sm:items-center"
                 onClick={() => {
                   setSelectedPreset(preset);
                   handleApply({ preset: preset.name, viewportId });

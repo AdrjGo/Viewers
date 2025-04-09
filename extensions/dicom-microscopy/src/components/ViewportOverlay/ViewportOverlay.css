@@ -85,3 +85,7 @@
 .DicomMicroscopyViewer .top-viewport .flex span:not(.font-light) {
   flex-shrink: 0;
 }
+
+.viewport-overlay div {
+  font-size: 5px !important;
+}

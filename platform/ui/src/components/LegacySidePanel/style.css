@@ -25,3 +25,9 @@
   pointer-events: none;
   opacity: 0.6;
 }
+
+@media (max-width: 640px) {
+  #overlay-item {
+    font-size: 10px !important;
+  }
+}

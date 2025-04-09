@@ -43,11 +43,11 @@ export function OHIFCornerstoneSRContainer(props) {
 
   return (
     <div>
-      <div className="font-bold">
+      <div className="font-bold max-sm:text-sm">
         {containerNumberedTree.join('.')}.&nbsp;
         {CodeMeaning}
       </div>
-      <div className="ml-4 mb-2">{contentItems}</div>
+      <div className="ml-4 mb-2 max-sm:text-sm">{contentItems}</div>
     </div>
   );
 }

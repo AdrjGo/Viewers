@@ -74,7 +74,7 @@ const Notification = ({
   return (
     <div
       ref={notificationRef}
-      className="border-customblue-10 bg-customblue-400 mx-2 mt-2 flex flex-col rounded-md border-2 p-2 outline-none"
+      className="border-customblue-10 bg-customblue-400 mt-2 flex flex-col rounded-md border-2 p-2 outline-none sm:mx-2"
       data-cy={id}
       onKeyDown={onKeyPress}
       tabIndex={0}
@@ -84,9 +84,9 @@ const Notification = ({
           name={icon}
           className={classnames('h-6 w-6', color)}
         />
-        <span className="ml-2 text-[13px] text-black">{message}</span>
+        <span className="ml-2 text-[13px] text-black max-sm:text-xs">{message}</span>
       </div>
-      <div className="mt-2 flex flex-wrap justify-end gap-2">
+      <div className="mt-2 flex flex-wrap justify-end gap-2 max-sm:justify-between">
         {actions?.map((action, index) => {
           return (
             <Button
@@ -97,6 +97,7 @@ const Notification = ({
               onClick={() => {
                 onSubmit(action.value);
               }}
+              className="max-sm:text-[10px]"
             >
               {action.text}
             </Button>

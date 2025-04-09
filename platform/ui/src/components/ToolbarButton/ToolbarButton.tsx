@@ -31,7 +31,7 @@ const ToolbarButton = ({
     toolTipClassName !== undefined
       ? toolTipClassName
       : sizeToUse === 'toolbar'
-        ? 'w-[40px] h-[40px]'
+        ? 'w-[40px] max-sm:h-[30px] h-[40px] max-sm:w-auto'
         : 'w-[32px] h-[32px]';
 
   return (
@@ -46,7 +46,8 @@ const ToolbarButton = ({
       >
         <IconButton
           size={sizeToUse}
-          className={classNames(className, disabled ? 'ohif-disabled' : '')}
+          sizeClasses
+          className={classNames(`${className}`, disabled ? 'ohif-disabled' : '')}
           onClick={() => {
             onInteraction({
               itemId: id,

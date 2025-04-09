@@ -3,15 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
 
-import { UserPreferences, AboutModal, useModal } from '@ohif/ui';
+import { AboutModal, useModal } from '@ohif/ui';
 import { Header } from '@ohif/ui-next';
-import i18n from '@ohif/i18n';
-import { hotkeys } from '@ohif/core';
+// import i18n from '@ohif/i18n';
+// import { hotkeys } from '@ohif/core';
 import { Toolbar } from '../Toolbar/Toolbar';
 import HeaderPatientInfo from './HeaderPatientInfo';
 import { PatientInfoVisibility } from './HeaderPatientInfo/HeaderPatientInfo';
 
-const { availableLanguages, defaultLanguage, currentLanguage } = i18n;
+// const { availableLanguages, defaultLanguage, currentLanguage } = i18n;
 
 function ViewerHeader({
   hotkeysManager,
@@ -47,8 +47,8 @@ function ViewerHeader({
   };
 
   const { t } = useTranslation();
-  const { show, hide } = useModal();
-  const { hotkeyDefinitions, hotkeyDefaults } = hotkeysManager;
+  const { show } = useModal();
+  // const { hotkeyDefinitions, hotkeyDefaults } = hotkeysManager;
   const versionNumber = process.env.VERSION_NUMBER;
   const commitHash = process.env.COMMIT_HASH;
 
@@ -61,40 +61,40 @@ function ViewerHeader({
           content: AboutModal,
           title: t('AboutModal:About OHIF Viewer'),
           contentProps: { versionNumber, commitHash },
-          containerDimensions: 'max-w-4xl max-h-4xl',
+          containerDimensions: 'max-w-4xl max-h-4xl max-sm:max-w-[90%]',
         }),
     },
-    {
-      title: t('Header:Preferences'),
-      icon: 'settings',
-      onClick: () =>
-        show({
-          title: t('UserPreferencesModal:User preferences'),
-          content: UserPreferences,
-          containerDimensions: 'w-[70%] max-w-[900px]',
-          contentProps: {
-            hotkeyDefaults: hotkeysManager.getValidHotkeyDefinitions(hotkeyDefaults),
-            hotkeyDefinitions,
-            currentLanguage: currentLanguage(),
-            availableLanguages,
-            defaultLanguage,
-            onCancel: () => {
-              hotkeys.stopRecord();
-              hotkeys.unpause();
-              hide();
-            },
-            onSubmit: ({ hotkeyDefinitions, language }) => {
-              if (language.value !== currentLanguage().value) {
-                i18n.changeLanguage(language.value);
-              }
-              hotkeysManager.setHotkeys(hotkeyDefinitions);
-              hide();
-            },
-            onReset: () => hotkeysManager.restoreDefaultBindings(),
-            hotkeysModule: hotkeys,
-          },
-        }),
-    },
+    // {
+    //   title: t('Header:Preferences'),
+    //   icon: 'settings',
+    //   onClick: () =>
+    //     show({
+    //       title: t('UserPreferencesModal:User preferences'),
+    //       content: UserPreferences,
+    //       containerDimensions: 'w-[90%] max-w-[900px]',
+    //       contentProps: {
+    //         hotkeyDefaults: hotkeysManager.getValidHotkeyDefinitions(hotkeyDefaults),
+    //         hotkeyDefinitions,
+    //         currentLanguage: currentLanguage(),
+    //         availableLanguages,
+    //         defaultLanguage,
+    //         onCancel: () => {
+    //           hotkeys.stopRecord();
+    //           hotkeys.unpause();
+    //           hide();
+    //         },
+    //         onSubmit: ({ hotkeyDefinitions, language }) => {
+    //           if (language.value !== currentLanguage().value) {
+    //             i18n.changeLanguage(language.value);
+    //           }
+    //           hotkeysManager.setHotkeys(hotkeyDefinitions);
+    //           hide();
+    //         },
+    //         onReset: () => hotkeysManager.restoreDefaultBindings(),
+    //         hotkeysModule: hotkeys,
+    //       },
+    //     }),
+    // },
   ];
 
   if (appConfig.oidc) {
@@ -128,7 +128,7 @@ function ViewerHeader({
         )
       }
     >
-      <div className="relative flex justify-center gap-[4px]">
+      <div className="max-sm:border-primary-dark relative flex justify-between gap-[4px] max-sm:w-44 max-sm:overflow-x-auto max-sm:border-l max-sm:border-r max-sm:px-1">
         <Toolbar servicesManager={servicesManager} />
       </div>
     </Header>

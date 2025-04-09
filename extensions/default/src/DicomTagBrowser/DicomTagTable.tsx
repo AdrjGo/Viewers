@@ -17,19 +17,19 @@ function ColumnHeaders({ tagRef, vrRef, keywordRef, valueRef }) {
   return (
     <div
       className={classNames(
-        'bg-secondary-dark ohif-scrollbar flex w-full flex-row overflow-y-scroll'
+        'bg-secondary-dark flex w-full flex-row px-2 max-sm:gap-2 max-sm:[&>div>label>span]:w-fit max-sm:[&>div>label>span]:text-sm max-sm:[&>div>label]:items-center max-sm:[&>div>label]:justify-center'
       )}
       style={rowVerticalPaddingStyle}
     >
-      <div className="w-4/24 px-3">
+      <div className="w-4/24 max-sm:w-[24%] sm:px-3">
         <label
           ref={tagRef}
-          className="flex flex-1 select-none flex-col pl-1 text-lg text-white"
+          className="flex select-none flex-col pl-1 text-lg text-white sm:flex-1"
         >
-          <span className="flex flex-row items-center focus:outline-none">Tag</span>
+          <span className="flex flex-row items-center focus:outline-none">Etiqueta</span>
         </label>
       </div>
-      <div className="w-2/24 px-3">
+      <div className="w-2/24 max-sm:w-[6%] sm:px-3">
         <label
           ref={vrRef}
           className="flex flex-1 select-none flex-col pl-1 text-lg text-white"
@@ -37,20 +37,20 @@ function ColumnHeaders({ tagRef, vrRef, keywordRef, valueRef }) {
           <span className="flex flex-row items-center focus:outline-none">VR</span>
         </label>
       </div>
-      <div className="w-6/24 px-3">
+      <div className="w-6/24 max-sm:w-[27%] sm:px-3">
         <label
           ref={keywordRef}
           className="flex flex-1 select-none flex-col pl-1 text-lg text-white"
         >
-          <span className="flex flex-row items-center focus:outline-none">Keyword</span>
+          <span className="flex flex-row items-center focus:outline-none">Palabra Clave</span>
         </label>
       </div>
-      <div className="w-5/24 grow px-3">
+      <div className="w-5/24 grow max-sm:max-w-[39%] sm:px-3">
         <label
           ref={valueRef}
           className="flex flex-1 select-none flex-col pl-1 text-lg text-white"
         >
-          <span className="flex flex-row items-center focus:outline-none">Value</span>
+          <span className="flex flex-row items-center focus:outline-none">Valor</span>
         </label>
       </div>
     </div>
@@ -124,15 +124,15 @@ function DicomTagTable({ rows }) {
         <div
           style={{ ...style, ...rowStyle }}
           className={classNames(
-            'hover:bg-secondary-main border-secondary-light flex w-full flex-row items-center break-all bg-black text-base transition duration-300',
+            'hover:bg-secondary-main border-secondary-light flex w-full flex-row items-center break-all bg-black text-base transition duration-300 max-sm:h-auto max-sm:gap-2 max-sm:[&>div]:text-center max-sm:[&>div]:text-xs',
             lineHeightClassName
           )}
           key={`DICOMTagRow-${index}`}
         >
-          <div className="w-4/24 px-3">{row[0]}</div>
-          <div className="w-2/24 px-3">{row[1]}</div>
-          <div className="w-6/24 px-3">{row[2]}</div>
-          <div className="w-5/24 grow px-3">{row[3]}</div>
+          <div className="w-4/24 max-sm:w-[24%] sm:px-3">{row[0]}</div>
+          <div className="w-2/24 max-sm:w-[6%] sm:px-3">{row[1]}</div>
+          <div className="w-6/24 max-sm:w-[27%] sm:px-3">{row[2]}</div>
+          <div className="w-5/24 grow max-sm:max-w-[39%] sm:px-3">{row[3]}</div>
         </div>
       );
     },
@@ -187,7 +187,7 @@ function DicomTagTable({ rows }) {
         valueRef={valueRef}
       />
       <div
-        className="relative m-auto border-2 border-black bg-black"
+        className="relative m-auto border-2 border-black bg-black max-sm:px-2"
         style={{ height: '32rem' }}
       >
         {isHeaderRendered() && (
@@ -197,7 +197,7 @@ function DicomTagTable({ rows }) {
             itemCount={rows.length}
             itemSize={getItemSize}
             width={'100%'}
-            className="ohif-scrollbar"
+            className="sm:ohif-scrollbar"
           >
             {Row}
           </List>

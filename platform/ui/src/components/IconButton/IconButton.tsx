@@ -43,7 +43,7 @@ const variantClasses = {
       'border border-primary-main text-white hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
   },
   contained: {
-    default: 'text-common-bright hover:opacity-80 active:opacity-100 focus:opacity-80',
+    default: 'text-common-bright hover:opacity-80 active:opacity-100 focus:opacity-80 max-sm:size-4',
     primary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     secondary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
     white: 'text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
@@ -63,7 +63,7 @@ const iconSizeClasses = {
   small: 'w-4 h-4',
   medium: 'w-5 h-5',
   large: 'w-6 h-6',
-  toolbar: 'w-[28px] h-[28px]',
+  toolbar: 'w-[28px] max-sm:w-[25px] h-[28px] max-sm:h-[25px]',
   toolbox: 'w-[24px] h-[24px]',
 };
 
@@ -93,7 +93,7 @@ const IconButton = ({
     onClick(e);
   };
 
-  const padding = size === 'toolbar' ? '6px' : size === 'toolbox' ? '4px' : null;
+  const padding = size === 'toolbar' ? '5px' : size === 'toolbox' ? '4px' : null;
 
   return (
     <button

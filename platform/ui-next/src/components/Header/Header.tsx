@@ -55,8 +55,8 @@ function Header({
       isSticky={isSticky}
       {...props}
     >
-      <div className="relative h-[48px] items-center">
-        <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center">
+      <div className="relative h-[48px] w-full items-center">
+        <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center justify-between">
           <div
             className={classNames(
               'mr-3 inline-flex items-center',
@@ -65,15 +65,16 @@ function Header({
             onClick={onClickReturn}
             data-cy="return-to-work-list"
           >
+            {/* Logo principal en el header */}
             {isReturnEnabled && <Icons.ChevronPatient className="text-primary-active w-8" />}
-            <div className="ml-1">
+            <div className="ml-1 max-sm:hidden">
               {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Icons.OHIFLogo />}
             </div>
           </div>
         </div>
         <div className="absolute top-1/2 left-[250px] h-8 -translate-y-1/2">{Secondary}</div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-          <div className="flex items-center justify-center space-x-2">{children}</div>
+        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 transform max-sm:left-8 max-sm:w-[90%] sm:-translate-x-1/2">
+          <div className="flex items-center justify-center max-sm:w-[50%]">{children}</div>
         </div>
         <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
           {PatientInfo}

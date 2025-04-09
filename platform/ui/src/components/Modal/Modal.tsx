@@ -58,8 +58,8 @@ const Modal = ({
       <section
         className={
           contentDimensions
-            ? `ohif-scrollbar bg-primary-dark overflow-y-auto ${contentDimensions}`
-            : 'ohif-scrollbar modal-content bg-primary-dark overflow-y-auto rounded-bl rounded-br px-[20px] pt-2 pb-[20px]'
+            ? `ohif-scrollbar bg-primary-dark relative max-sm:overflow-y-auto ${contentDimensions}`
+            : 'ohif-scrollbar modal-content bg-primary-dark rounded-bl rounded-br px-[20px] pt-2 pb-[20px] max-sm:overflow-y-auto max-sm:px-3'
         }
       >
         {children}
@@ -88,7 +88,7 @@ const Modal = ({
       {movable ? (
         <Draggable
           handle=".drag-handle"
-          defaultClassName="bg-primary-dark pointer-events-auto"
+          defaultClassName="bg-primary-dark pointer-events-auto max-sm:w-[90%]"
         >
           <div>{modalContent}</div>
         </Draggable>

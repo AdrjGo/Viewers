@@ -6,13 +6,13 @@ import Tooltip from '../Tooltip/Tooltip';
 
 const sizeClasses = {
   [ButtonEnums.size.small]: 'h-[26px] text-[13px]',
-  [ButtonEnums.size.medium]: 'h-[32px] text-[14px]',
+  [ButtonEnums.size.medium]: 'h-[32px] text-[14px] max-sm:text-xs',
 };
 
 const layoutClasses =
-  'box-content inline-flex flex-row items-center justify-center gap-[5px] justify center px-[10px] outline-none rounded';
+  'box-content inline-flex text-wrap flex-row items-center justify-center gap-[5px] justify center px-[10px] outline-none rounded';
 
-const baseFontTextClasses = 'leading-[1.2] font-sans text-center whitespace-nowrap';
+const baseFontTextClasses = 'leading-[1.2] font-sans text-center';
 
 const fontTextClasses = {
   [ButtonEnums.type.primary]: classnames(baseFontTextClasses, 'font-semibold'),

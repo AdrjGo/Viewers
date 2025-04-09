@@ -110,8 +110,8 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
   return (
     <div className="dicom-tag-browser-content bg-muted">
       <div className="mb-6 flex flex-row items-start pl-1">
-        <div className="flex w-full flex-row items-start gap-4">
-          <div className="flex w-1/3 flex-col">
+        <div className="flex w-full flex-row items-start gap-4 max-sm:justify-between">
+          <div className="flex w-1/3 flex-col max-sm:w-1/2">
             <span className="text-muted-foreground flex h-6 items-center text-xs">Series</span>
             <Select
               value={selectedDisplaySetInstanceUID}
@@ -137,7 +137,7 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
             </Select>
           </div>
           {showInstanceList && (
-            <div className="mx-auto flex w-1/5 flex-col">
+            <div className="mx-auto flex w-1/5 flex-col max-sm:w-1/2">
               <span className="text-muted-foreground flex h-6 items-center text-xs">
                 Instance Number ({instanceNumber} of {activeDisplaySet.images.length})
               </span>
@@ -153,12 +153,12 @@ const DicomTagBrowser = ({ displaySets, displaySetInstanceUID }) => {
               />
             </div>
           )}
-          <div className="ml-auto flex w-1/3 flex-col">
+          <div className="flex w-1/3 flex-col max-sm:w-1/2 sm:ml-auto">
             <span className="text-muted-foreground flex h-6 items-center text-xs">
-              Search metadata
+              Buscar Datos
             </span>
             <InputFilterText
-              placeholder="Search metadata..."
+              placeholder="Buscar Datos..."
               onDebounceChange={setFilterValue}
             />
           </div>

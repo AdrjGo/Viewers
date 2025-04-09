@@ -179,22 +179,32 @@ function LayoutSelector({
       dropdownContent={
         DropdownContent !== null && (
           <div
-            className="flex"
+            className="flex max-sm:block"
             ref={dropdownRef}
           >
             <div className="bg-secondary-dark flex flex-col gap-2.5 p-2">
               <div className="text-aqua-pale text-xs">Common</div>
 
-              <div className="flex gap-4">
-                {commonPresets.map((preset, index) => (
-                  <LayoutPreset
-                    key={index}
-                    classNames="hover:bg-primary-dark group p-1 cursor-pointer"
-                    icon={preset.icon}
-                    commandOptions={preset.commandOptions}
-                    onSelection={onSelection}
-                  />
-                ))}
+              <div className="flex justify-between gap-4">
+                {window.innerWidth > 640
+                  ? commonPresets.map((preset, index) => (
+                      <LayoutPreset
+                        key={index}
+                        classNames="hover:bg-primary-dark group p-1 cursor-pointer"
+                        icon={preset.icon}
+                        commandOptions={preset.commandOptions}
+                        onSelection={onSelection}
+                      />
+                    ))
+                  : commonPresets.slice(0, 3).map((preset, index) => (
+                      <LayoutPreset
+                        key={index}
+                        classNames="hover:bg-primary-dark group p-1 cursor-pointer"
+                        icon={preset.icon}
+                        commandOptions={preset.commandOptions}
+                        onSelection={onSelection}
+                      />
+                    ))}
               </div>
 
               <div className="h-[2px] bg-black"></div>
@@ -216,17 +226,21 @@ function LayoutSelector({
               </div>
             </div>
 
-            <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black  p-2">
-              <div className="text-aqua-pale text-xs">Custom</div>
-              <DropdownContent
-                rows={rows}
-                columns={columns}
-                onSelection={onSelection}
-              />
-              <p className="text-aqua-pale text-xs leading-tight">
-                Hover to select <br></br>rows and columns <br></br> Click to apply
-              </p>
-            </div>
+            {window.innerWidth > 640 ? (
+              <div className="bg-primary-dark flex flex-col gap-2.5 border-l-2 border-solid border-black p-2">
+                <div className="text-aqua-pale text-xs">Custom</div>
+                <DropdownContent
+                  rows={rows}
+                  columns={columns}
+                  onSelection={onSelection}
+                />
+                <p className="text-aqua-pale text-xs leading-tight">
+                  Hover to select <br></br>rows and columns <br></br> Click to apply
+                </p>
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         )
       }

@@ -29,7 +29,7 @@ const SubMenu = (props: SubMenuProps) => {
           className="mr-2"
         ></Icon>
       )}
-      <div className="mr-auto">{props.itemLabel}</div>
+      <div className="mr-auto max-sm:text-xs">{props.itemLabel}</div>
       <Icon name="content-next"></Icon>
     </div>
   );

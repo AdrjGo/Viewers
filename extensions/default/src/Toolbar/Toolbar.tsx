@@ -1,6 +1,4 @@
 import React from 'react';
-import { Tooltip } from '@ohif/ui';
-import classnames from 'classnames';
 import { useToolbar } from '@ohif/core';
 
 export function Toolbar({ servicesManager, buttonSection = 'primary' }) {
@@ -31,7 +29,14 @@ export function Toolbar({ servicesManager, buttonSection = 'primary' }) {
           />
         );
 
-        return <div key={id}>{tool}</div>;
+        return (
+          <div
+            key={id}
+            className="relative z-50 flex justify-between"
+          >
+            {tool}
+          </div>
+        );
       })}
     </>
   );

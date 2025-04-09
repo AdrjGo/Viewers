@@ -157,7 +157,7 @@ const Thumbnail = ({
                     className="gap-[6px]"
                   >
                     <Icons.DicomTagBrowser />
-                    Tag Browser
+                    Navegador de Etiquetas
                   </DropdownMenuItem>
                   {canReject && (
                     <DropdownMenuItem

@@ -463,7 +463,7 @@ function commandsModule({
             onClose: uiModalService.hide,
             cornerstoneViewportService,
           },
-          containerDimensions: 'w-[70%] max-w-[900px]',
+          containerDimensions: 'w-[70%] max-sm:w-[90%] max-w-[900px]',
         });
       }
     },
