@@ -17,8 +17,8 @@ function ViewerLayout({
   // From Modes
   viewports,
   ViewportGridComp,
-  leftPanelClosed = false,
-  rightPanelClosed = false,
+  leftPanelClosed = true,
+  rightPanelClosed = true,
 }: withAppTypes): React.FunctionComponent {
   const [appConfig] = useAppConfig();
 

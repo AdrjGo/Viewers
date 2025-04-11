@@ -169,7 +169,7 @@ const SidePanel = ({
       if (panelOpen && onOpen) {
         onOpen();
       } else if (onClose && !panelOpen) {
-        onOpen(); /*Cambiado para que no se despliegue al entrar */
+        onClose();
       }
     },
     [onOpen, onClose]
@@ -178,17 +178,12 @@ const SidePanel = ({
   const updateActiveTabIndex = useCallback(
     (activeTabIndex: number) => {
       if (activeTabIndex === null) {
-        /*Cambiado para que no se despliegue al entrar en responsive */
-        if (window.innerWidth < 640) {
-          updatePanelOpen(false);
-        } else {
-          updatePanelOpen(true);
-        }
+        updatePanelOpen(false);
         return;
       }
 
       setActiveTabIndex(activeTabIndex);
-      updatePanelOpen(false);
+      updatePanelOpen(true);
 
       if (onActiveTabIndexChange) {
         onActiveTabIndexChange({ activeTabIndex });

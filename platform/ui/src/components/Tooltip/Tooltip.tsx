@@ -147,7 +147,7 @@ const Tooltip = ({
       <div
         ref={tooltipRef}
         className={classnames(
-          'tooltip-box bg-primary-dark border-secondary-light w-max-content relative inset-x-auto top-full rounded border text-base text-white max-sm:w-[50vw]',
+          'tooltip-box bg-primary-dark border-secondary-light w-max-content relative inset-x-auto top-full rounded border text-base text-white max-sm:w-fit max-sm:max-w-[50vw]',
           {
             'py-[6px] px-[8px]': !tight,
           },
