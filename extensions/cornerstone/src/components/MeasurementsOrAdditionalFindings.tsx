@@ -7,11 +7,11 @@ const { filterNot, filterAdditionalFindings } = utils.MeasurementFilters;
 
 export const MeasurementOrAdditionalFindingSets = [
   {
-    title: 'Measurements',
+    title: 'Medidas',
     filter: filterNot(filterAdditionalFindings),
   },
   {
-    title: 'Additional Findings',
+    title: 'Hallazgos adicionales',
     filter: filterAdditionalFindings,
   },
 ];

@@ -124,10 +124,10 @@ const DicomTagBrowser = ({
   }, [rows, filterValue]);
 
   return (
-    <div className="dicom-tag-browser-content bg-muted">
+    <div className="dicom-tag-browser-content bg-muted max-sm:w-[82dvw]">
       <div className="mb-6 flex flex-row items-start pl-1">
-        <div className="flex w-full flex-row items-start gap-4">
-          <div className="flex w-1/3 flex-col">
+        <div className="flex w-full flex-row items-start gap-4 max-sm:justify-between">
+          <div className="flex w-1/3 flex-col max-sm:w-1/2">
             <span className="text-muted-foreground flex h-6 items-center text-xs">Series</span>
             <Select
               value={selectedDisplaySetInstanceUID}
@@ -169,12 +169,12 @@ const DicomTagBrowser = ({
               />
             </div>
           )}
-          <div className="ml-auto mr-1 flex w-1/3 flex-col">
+          <div className="ml-auto mr-1 flex w-1/3 flex-col max-sm:w-1/2">
             <span className="text-muted-foreground flex h-6 items-center text-xs">
-              Search metadata
+              Buscar Datos
             </span>
             <InputFilter
-              className="text-muted-foreground"
+              className="text-muted-foreground overflow-hidden"
               onChange={setFilterValue}
             >
               <InputFilter.SearchIcon />

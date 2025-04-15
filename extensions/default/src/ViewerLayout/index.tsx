@@ -11,6 +11,8 @@ import useResizablePanels from './ResizablePanelsHook';
 
 const resizableHandleClassName = 'mt-[1px] bg-black';
 
+const panelLeft = window.innerWidth > 640 ? false : true;
+
 function ViewerLayout({
   // From Extension Module Params
   extensionManager,
@@ -20,8 +22,8 @@ function ViewerLayout({
   // From Modes
   viewports,
   ViewportGridComp,
-  leftPanelClosed = false,
-  rightPanelClosed = false,
+  leftPanelClosed = panelLeft,
+  rightPanelClosed = false /*Pruebaaaaaaaa*/,
   leftPanelResizable = false,
   rightPanelResizable = false,
 }: withAppTypes): React.FunctionComponent {
@@ -176,7 +178,7 @@ function ViewerLayout({
             ) : null}
             {/* TOOLBAR + GRID */}
             <ResizablePanel {...resizableViewportGridPanelProps}>
-              <div className="flex h-full flex-1 flex-col">
+              <div className="flex h-full flex-1 flex-col max-sm:h-[93dvh]">
                 <div
                   className="relative flex h-full flex-1 items-center justify-center overflow-hidden bg-black"
                   onMouseEnter={handleMouseEnter}
@@ -189,6 +191,7 @@ function ViewerLayout({
                 </div>
               </div>
             </ResizablePanel>
+            {/* Ocultar panel derecho en móvil */}
             {hasRightPanels ? (
               <>
                 <ResizableHandle
@@ -196,7 +199,7 @@ function ViewerLayout({
                   disabled={!rightPanelResizable}
                   className={resizableHandleClassName}
                 />
-                <ResizablePanel {...resizableRightPanelProps}>
+                <ResizablePanel {...resizableRightPanelProps} className='max-sm:hidden'>
                   <SidePanelWithServices
                     side="right"
                     isExpanded={!rightPanelClosedState}
@@ -210,7 +213,7 @@ function ViewerLayout({
         </React.Fragment>
       </div>
       <Onboarding tours={customizationService.getCustomization('ohif.tours')} />
-      <InvestigationalUseDialog dialogConfiguration={appConfig?.investigationalUseDialog} />
+      {/* <InvestigationalUseDialog dialogConfiguration={appConfig?.investigationalUseDialog} /> */}
     </div>
   );
 }

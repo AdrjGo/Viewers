@@ -48,9 +48,9 @@ export function VolumeLighting({
 
   // Configuration for our lighting properties
   const lightingProperties = [
-    { key: 'ambient', label: 'Ambient' },
-    { key: 'diffuse', label: 'Diffuse' },
-    { key: 'specular', label: 'Specular' },
+    { key: 'ambient', label: 'Ambiente' },
+    { key: 'diffuse', label: 'Difusa' },
+    { key: 'specular', label: 'Reflejo' },
   ];
 
   return (

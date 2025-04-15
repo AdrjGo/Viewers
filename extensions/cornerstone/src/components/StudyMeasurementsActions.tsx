@@ -45,7 +45,7 @@ export function StudyMeasurementsActions({ items, StudyInstanceUID, measurementF
           }}
         >
           <Icons.Add />
-          Create SR
+          Crear SR
         </Button>
         <Button
           size="sm"
@@ -63,7 +63,7 @@ export function StudyMeasurementsActions({ items, StudyInstanceUID, measurementF
           }}
         >
           <Icons.Delete />
-          Delete
+          Borrar todo
         </Button>
       </div>
     </div>

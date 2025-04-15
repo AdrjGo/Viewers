@@ -199,6 +199,8 @@ import ArrowRight from './Sources/ArrowRight';
 import ChevronLeft from './Sources/ChevronLeft';
 import StatusAlert from './Sources/StatusAlert';
 import Undo from './Sources/Undo';
+import RadoViewerLogo from '../../../../app/public/assets/RadoViewerLogo.png';
+import RadoViewerLogoSmall from '../../../../app/public/assets/RadoViewerLogoSmall.png';
 //
 //
 type IconProps = React.HTMLAttributes<SVGElement>;
@@ -210,6 +212,7 @@ const ImageWrapper = ({ src, ...props }: { src: string } & ImageIconProps) => {
       src={src}
       {...props}
       alt=""
+      className="h-10 max-sm:h-7"
     />
   );
 };
@@ -368,6 +371,18 @@ export const Icons = {
   'MR-T2-Brain': (props: ImageIconProps) => (
     <ImageWrapper
       src={MRT2Brain}
+      {...props}
+    />
+  ),
+  RadoViewerLogo: (props: ImageIconProps) => (
+    <ImageWrapper
+      src={RadoViewerLogo}
+      {...props}
+    />
+  ),
+  RadoViewerLogoSmall: (props: ImageIconProps) => (
+    <ImageWrapper
+      src={RadoViewerLogoSmall}
       {...props}
     />
   ),

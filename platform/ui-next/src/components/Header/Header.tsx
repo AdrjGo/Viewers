@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import {
   DropdownMenu,
@@ -49,14 +48,15 @@ function Header({
       onClickReturnButton();
     }
   };
+  const logoResponsive = window.innerWidth > 640;
 
   return (
     <NavBar
       isSticky={isSticky}
       {...props}
     >
-      <div className="relative h-[48px] items-center">
-        <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center">
+      <div className="relative h-[48px] w-full items-center">
+        <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center justify-between">
           <div
             className={classNames(
               'mr-3 inline-flex items-center',
@@ -65,19 +65,26 @@ function Header({
             onClick={onClickReturn}
             data-cy="return-to-work-list"
           >
-            {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}
+            {/* BOTON PARA RETROCEDER  AL WORKLIST*/}
+            {/* {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />} */}
+
             <div className="ml-1">
-              {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Icons.OHIFLogo />}
+              {WhiteLabeling?.createLogoComponentFn?.(React, props) || logoResponsive ? (
+                <Icons.RadoViewerLogo />
+              ) : (
+                <Icons.RadoViewerLogoSmall />
+              )}
             </div>
           </div>
         </div>
+
         <div className="absolute top-1/2 left-[250px] h-8 -translate-y-1/2">{Secondary}</div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-          <div className="flex items-center justify-center space-x-2">{children}</div>
+        <div className="absolute top-1/2 left-1/2 -translate-y-1/2 transform max-sm:left-8 max-sm:w-[90%] sm:-translate-x-1/2">
+          <div className="flex items-center justify-center max-sm:w-[65%]">{children}</div>
         </div>
         <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
           {UndoRedo}
-          <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
+          <div className="border-primary-dark mx-1.5 h-[25px] border-r max-sm:hidden"></div>
           {PatientInfo}
           <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
           <div className="flex-shrink-0">

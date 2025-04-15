@@ -109,7 +109,7 @@ export function Colorbar({
       }}
     >
       <div className="flex w-7 flex-shrink-0 items-center justify-center"></div>
-      <span className="flex-grow">Display Color bar</span>
+      <span className="flex-gro max-sm:text-xs">Barra de Colores</span>
       <Switch
         className="ml-2 flex-shrink-0"
         checked={showColorbar}

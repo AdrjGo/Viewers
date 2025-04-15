@@ -6,7 +6,7 @@ export default {
   'studyBrowser.thumbnailMenuItems': [
     {
       id: 'tagBrowser',
-      label: 'Tag Browser',
+      label: 'Etiquetas',
       iconName: 'DicomTagBrowser',
       onClick: ({ commandsManager, displaySetInstanceUID }: withAppTypes) => {
         commandsManager.runCommand('openDICOMTagViewer', {
@@ -17,13 +17,13 @@ export default {
   ],
   'studyBrowser.sortFunctions': [
     {
-      label: 'Series Number',
+      label: 'Número de serie',
       sortFunction: (a, b) => {
         return a?.SeriesNumber - b?.SeriesNumber;
       },
     },
     {
-      label: 'Series Date',
+      label: 'Fecha',
       sortFunction: (a, b) => {
         const dateA = new Date(formatDate(a?.SeriesDate));
         const dateB = new Date(formatDate(b?.SeriesDate));
@@ -35,15 +35,15 @@ export default {
     {
       id: 'list',
       iconName: 'ListView',
-      selected: false,
-    },
-    {
-      id: 'thumbnails',
-      iconName: 'ThumbnailView',
       selected: true,
     },
+    // {
+    //   id: 'thumbnails',
+    //   iconName: 'ThumbnailView',
+    //   selected: true,
+    // },
   ],
-  'studyBrowser.studyMode': 'all',
+  'studyBrowser.studyMode': 'primary',
   'studyBrowser.thumbnailDoubleClickCallback': {
     callbacks: [
       ({ activeViewportId, servicesManager, commandsManager, isHangingProtocolLayout }) =>

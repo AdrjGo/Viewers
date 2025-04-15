@@ -50,12 +50,12 @@ const Viewport: React.FC<ViewportProps> = ({ viewportId, onArrowsClick, studyDat
             },
             {
               type: 'secondary',
-              text: 'No, do not ask again',
+              text: 'No, no preguntar de nuevo',
               value: -1,
             },
             {
               type: 'primary',
-              text: 'Yes',
+              text: 'Sí',
               value: 1,
             },
           ]}

@@ -31,7 +31,7 @@ const DisplaySetMessageListTooltip = ({ messages, id }): React.ReactNode => {
                   marginTop: '4px',
                 }}
               >
-                {t('Display Set Messages')}
+                {t('Mostrar mensajes establecidos')}
               </div>
               <ol
                 style={{

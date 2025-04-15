@@ -101,7 +101,7 @@ const ViewportDialog: React.FC<ViewportDialogProps> = ({
           name={icon}
           className={classnames('h-5 w-5', color)}
         />
-        <span className="text-foreground ml-2 text-base">{message}</span>
+        <span className="text-foreground ml-2 text-base max-sm:text-xs">{message}</span>
       </div>
       <div className="mt-2 flex flex-wrap justify-end gap-2">
         {actions?.map((action, index) => {
@@ -114,7 +114,7 @@ const ViewportDialog: React.FC<ViewportDialogProps> = ({
               onClick={() => {
                 onSubmit(action.value);
               }}
-              className="min-w-16"
+              className="min-w-16 max-sm:text-xs"
             >
               {action.text}
             </Button>

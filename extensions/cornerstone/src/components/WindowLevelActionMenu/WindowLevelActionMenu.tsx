@@ -122,7 +122,7 @@ export function WindowLevelActionMenu({
         'flex shrink-0 cursor-pointer rounded active:text-foreground text-highlight',
         isLight ? ' hover:bg-primary/30' : 'hover:bg-primary/30'
       )}
-      menuStyle={{ maxHeight: vpHeight - 32, minWidth: 218 }}
+      menuStyle={{ maxHeight: vpHeight - 32, minWidth: window.innerWidth > 768 ? 218 : 150 }}
       onVisibilityChange={() => {
         setVpHeight(element.clientHeight);
       }}
@@ -160,7 +160,7 @@ export function WindowLevelActionMenu({
         {presets && presets.length > 0 && !is3DVolume && (
           <AllInOneMenu.SubMenu
             key="windowLevelPresets"
-            itemLabel={t('Modality Window Presets')}
+            itemLabel={t('Ajustes preestablecidos')}
             itemIcon="viewport-window-level"
           >
             <WindowLevel

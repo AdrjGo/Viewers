@@ -117,7 +117,7 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
         </div>
       }
     >
-      <div className="relative flex justify-center gap-[4px]">
+      <div className="max-sm:border-primary-dark relative flex justify-between gap-[4px] max-sm:w-[90%] max-sm:overflow-x-auto max-sm:border-l max-sm:border-r max-sm:px-1">
         <Toolbar servicesManager={servicesManager} />
       </div>
     </Header>

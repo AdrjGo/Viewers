@@ -7,19 +7,19 @@ export function UntrackSeriesModal({ hide, onConfirm, message }) {
       <div>
         <p>{message}</p>
         <p className="mt-2">
-          This action cannot be undone and will delete all your existing measurements.
+          Esta acción no se puede deshacer y eliminará todas las mediciones existentes.
         </p>
       </div>
       <FooterAction className="mt-4">
         <FooterAction.Right>
-          <FooterAction.Secondary onClick={hide}>Cancel</FooterAction.Secondary>
+          <FooterAction.Secondary onClick={hide}>Cancelar</FooterAction.Secondary>
           <FooterAction.Primary
             onClick={() => {
               onConfirm();
               hide();
             }}
           >
-            Untrack
+            Borrar
           </FooterAction.Primary>
         </FooterAction.Right>
       </FooterAction>

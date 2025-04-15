@@ -39,7 +39,7 @@ const Item = ({
       {(icon || useIconSpace) && (
         <div className="flex w-7 flex-shrink-0 items-center justify-center">{icon}</div>
       )}
-      <span className="flex-grow">{label}</span>
+      <span className="flex-grow max-sm:text-xs">{label}</span>
       {secondaryLabel && (
         <span className="text-muted-foreground ml-2 flex-shrink-0">{secondaryLabel}</span>
       )}

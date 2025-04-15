@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ImageModal, FooterAction } from '@ohif/ui-next';
 
 const MAX_TEXTURE_SIZE = 10000;
-const DEFAULT_FILENAME = 'image';
+const DEFAULT_FILENAME = 'Imagen';
 
 interface ViewportDownloadFormNewProps {
   onClose: () => void;
@@ -82,7 +82,7 @@ function ViewportDownloadFormNew({
               value={filename}
               onChange={e => setFilename(e.target.value)}
             >
-              File name
+              Nombre del archivo
             </ImageModal.Filename>
             <ImageModal.Filetype
               selected={fileType}
@@ -109,7 +109,7 @@ function ViewportDownloadFormNew({
             maxWidth={MAX_TEXTURE_SIZE.toString()}
             maxHeight={MAX_TEXTURE_SIZE.toString()}
           >
-            Image size <span className="text-muted-foreground">px</span>
+            Tamaño de imagen <span className="text-muted-foreground">px</span>
           </ImageModal.ImageSize>
 
           <ImageModal.SwitchOption
@@ -117,7 +117,7 @@ function ViewportDownloadFormNew({
             checked={showAnnotations}
             onCheckedChange={onAnnotationsChange}
           >
-            Include annotations
+            Incluir anotaciones
           </ImageModal.SwitchOption>
           {warningState.enabled && (
             <ImageModal.SwitchOption
@@ -125,19 +125,19 @@ function ViewportDownloadFormNew({
               checked={showWarningMessage}
               onCheckedChange={setShowWarningMessage}
             >
-              Include warning message
+              Incluir mensaje de adventencia
             </ImageModal.SwitchOption>
           )}
           <FooterAction className="mt-2">
             <FooterAction.Right>
-              <FooterAction.Secondary onClick={onClose}>Cancel</FooterAction.Secondary>
+              <FooterAction.Secondary onClick={onClose}>Cancelar</FooterAction.Secondary>
               <FooterAction.Primary
                 onClick={() => {
                   onDownload(filename || DEFAULT_FILENAME, fileType);
                   onClose();
                 }}
               >
-                Save
+                Guardar
               </FooterAction.Primary>
             </FooterAction.Right>
           </FooterAction>

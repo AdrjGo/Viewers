@@ -19,7 +19,7 @@ const BackItem = ({ backLabel, onBackClick }: BackItemProps) => {
           name="content-prev"
           className="ml-2 mr-2"
         />
-        <span>{backLabel || 'Back to Display Options'}</span>
+        <span className="max-sm:text-xs">{backLabel || 'Volver a las opciones'}</span>
       </div>
       <DividerItem></DividerItem>
     </>

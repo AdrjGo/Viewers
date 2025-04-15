@@ -135,7 +135,7 @@ function ToolbarLayoutSelectorWithServices({
         onSelectionChange={handleSelectionChange}
         {...props}
       >
-        <LayoutSelector.Trigger tooltip="Change layout" />
+        <LayoutSelector.Trigger tooltip="Cambiar diseño" />
         <LayoutSelector.Content>
           {/* Left side - Presets */}
           {(commonPresets.length > 0 || advancedPresets.length > 0) && (
@@ -143,18 +143,44 @@ function ToolbarLayoutSelectorWithServices({
               {commonPresets.length > 0 && (
                 <>
                   <LayoutSelector.PresetSection title="Common">
-                    {commonPresets.map((preset, index) => (
+                    {window.innerWidth > 640
+                      ? commonPresets.map((preset, index) => (
+                          <LayoutSelector.Preset
+                            key={`common-preset-${index}`}
+                            icon={preset.icon}
+                            commandOptions={preset.commandOptions}
+                            isPreset={false}
+                          />
+                        ))
+                      : commonPresets.slice(0, 3).map((preset, index) => (
+                          <LayoutSelector.Preset
+                            key={`common-preset-${index}`}
+                            icon={preset.icon}
+                            commandOptions={preset.commandOptions}
+                            isPreset={false}
+                          />
+                        ))}
+                  </LayoutSelector.PresetSection>
+                  <LayoutSelector.Divider />
+                </>
+              )}
+              {/* {window.innerWidth > 640
+                  ? commonPresets.map((preset, index) => (
                       <LayoutSelector.Preset
                         key={`common-preset-${index}`}
                         icon={preset.icon}
                         commandOptions={preset.commandOptions}
                         isPreset={false}
                       />
-                    ))}
-                  </LayoutSelector.PresetSection>
-                  <LayoutSelector.Divider />
-                </>
-              )}
+                    ))
+                  : commonPresets.slice(0, 3).map((preset, index) => (
+                     <LayoutSelector.Preset
+                        key={`common-preset-${index}`}
+                        icon={preset.icon}
+                        commandOptions={preset.commandOptions}
+                        isPreset={false}
+                      />
+                    ))} */}
 
               {advancedPresets.length > 0 && (
                 <LayoutSelector.PresetSection title="Advanced">
@@ -174,7 +200,7 @@ function ToolbarLayoutSelectorWithServices({
           )}
 
           {/* Right Side - Grid Layout */}
-          <div className="bg-muted flex flex-col gap-2.5 border-l-2 border-solid border-black p-2">
+          <div className="bg-muted flex flex-col gap-2.5 border-l-2 border-solid border-black p-2 max-sm:hidden">
             <div className="text-muted-foreground text-xs">Custom</div>
             <LayoutSelector.GridSelector
               rows={rows}

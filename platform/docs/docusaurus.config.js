@@ -36,10 +36,10 @@ module.exports = {
   future: {
     experimental_faster: true,
   },
-  title: 'OHIF',
-  tagline: 'Open-source web-based medical imaging platform',
+  title: 'RadoViewer',
+  tagline: 'web-based medical imaging platform',
   organizationName: 'Open Health Imaging Foundation',
-  projectName: 'OHIF',
+  projectName: 'RadoViewer',
   baseUrl,
   baseUrlIssueBanner: true,
   url: 'https://docs.ohif.org',

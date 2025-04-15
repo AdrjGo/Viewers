@@ -25,7 +25,7 @@ const SubMenu = (props: SubMenuProps) => {
           <Icons.ByName name={props.itemIcon}></Icons.ByName>
         </div>
       )}
-      <span className="flex-grow">{props.itemLabel}</span>
+      <span className="flex-grow max-sm:text-xs">{props.itemLabel}</span>
       <div className="ml-2 flex-shrink-0">
         <Icons.ByName name="content-next"></Icons.ByName>
       </div>

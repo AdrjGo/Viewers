@@ -40,12 +40,12 @@ function ImageVisual({ children, className }: ImageVisualProps) {
   return (
     <div
       className={cn(
-        'flex-1 items-center justify-center rounded-2xl bg-black/80 p-4 sm:flex-[7]',
+        'flex-1 items-center justify-center rounded-2xl bg-black/80 p-4 max-sm:p-2 sm:flex-[7]',
         'flex', // ensure the container is a flex box
         className
       )}
     >
-      <div className="h-[512px] w-[512px] overflow-auto">{children}</div>
+      <div className="h-[512px] w-[512px] overflow-auto max-sm:h-[75vw] max-sm:w-[75vw]">{children}</div>
     </div>
   );
 }

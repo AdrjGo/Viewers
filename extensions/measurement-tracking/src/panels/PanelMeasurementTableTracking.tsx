@@ -39,7 +39,8 @@ function PanelMeasurementTableTracking(props) {
           content: UntrackSeriesModal,
           contentProps: {
             onConfirm: onUntrackConfirm,
-            message: 'Are you sure you want to untrack study and delete all measurements?',
+            message:
+              '¿Está seguro que desea anular el seguimiento del estudio y eliminar todas las mediciones?',
           },
         })
       : onUntrackConfirm();
@@ -48,7 +49,7 @@ function PanelMeasurementTableTracking(props) {
   const EmptyComponent = () => (
     <div data-cy="trackedMeasurements-panel">
       <MeasurementTable
-        title="Measurements"
+        title="Medidas"
         isExpanded={false}
       >
         <MeasurementTable.Body />
