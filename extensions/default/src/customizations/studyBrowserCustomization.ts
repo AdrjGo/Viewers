@@ -35,7 +35,7 @@ export default {
     {
       id: 'list',
       iconName: 'ListView',
-      selected: true,
+      selected: false,
     },
     {
       id: 'thumbnails',

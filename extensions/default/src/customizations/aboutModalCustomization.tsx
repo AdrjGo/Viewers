@@ -1,37 +1,32 @@
 import React from 'react';
-import { AboutModal } from '@ohif/ui-next';
-import detect from 'browser-detect';
+import { AboutModal, Icons } from '@ohif/ui-next';
 
 function AboutModalDefault() {
-  const { os, version, name } = detect();
-  const browser = `${name[0].toUpperCase()}${name.substr(1)} ${version}`;
-  const versionNumber = process.env.VERSION_NUMBER;
-  const commitHash = process.env.COMMIT_HASH;
-
-  const [main, beta] = versionNumber.split('-');
-
   return (
-    <AboutModal className="w-[400px] max-sm:w-auto">
-      <AboutModal.ProductName>OHIF Viewer</AboutModal.ProductName>
-      <AboutModal.ProductVersion>{main}</AboutModal.ProductVersion>
-      {beta && <AboutModal.ProductBeta>{beta}</AboutModal.ProductBeta>}
+    <>
+      <AboutModal className="w-[400px] max-sm:w-auto">
+        <AboutModal.ProductName>
+          <Icons.RadoViewerLogoAbout />
+        </AboutModal.ProductName>
+        {/* <AboutModal.ProductVersion>{main}</AboutModal.ProductVersion> */}
+        {/* {beta && <AboutModal.ProductBeta>{beta}</AboutModal.ProductBeta>} */}
 
-      <AboutModal.Body>
-        <AboutModal.DetailItem
-          label="Commit Hash"
-          value={commitHash}
-        />
-        <AboutModal.DetailItem
-          label="Current Browser & OS"
-          value={`${browser}, ${os}`}
-        />
-        <AboutModal.SocialItem
-          icon="SocialGithub"
-          url="OHIF/Viewers"
-          text="github.com/OHIF/Viewers"
-        />
-      </AboutModal.Body>
-    </AboutModal>
+        <AboutModal.Body>
+          <AboutModal.DetailItem
+            label="Address"
+            value="Av America E435 entre Av. Santa Cruz, Edif Jaque, Planta Baja, Local 3, Planta Baja, BO"
+          />
+          <AboutModal.DetailItem
+            label="Contacts"
+            value="reynaldo.vargas@medespacio.com"
+          />
+          <AboutModal.DetailItem
+            label="Web"
+            value="medespacio.com"
+          />
+        </AboutModal.Body>
+      </AboutModal>
+    </>
   );
 }
 

@@ -19,7 +19,12 @@ interface ProductNameProps {
 }
 function ProductName({ children, className }: ProductNameProps) {
   return (
-    <div className={cn('text-foreground pt-3 text-2xl font-medium leading-none', className)}>
+    <div
+      className={cn(
+        'text-foreground flex justify-center pt-3 text-2xl font-medium leading-none',
+        className
+      )}
+    >
       {children}
     </div>
   );
@@ -77,7 +82,7 @@ function DetailItem({ label, value, className }: DetailItemProps) {
 
 /** Sub-component: Social Item */
 interface SocialItemProps {
-  icon: string;
+  icon?: string;
   url: string;
   text: string;
   className?: string;
@@ -85,16 +90,16 @@ interface SocialItemProps {
 function SocialItem({ icon, url, text, className }: SocialItemProps) {
   return (
     <div className={cn('text-foreground flex items-center', className)}>
-      <div className="inline-block">
+      {/* <div className="inline-block">
         <Icons.ByName name={icon} />
-      </div>
+      </div> */}
       <Button
         asChild
         variant="link"
         className="py-6 text-lg"
       >
         <a
-          href={`https://github.com/${url}`}
+          href={`${url}`}
           target="_blank"
           rel="noopener noreferrer"
         >

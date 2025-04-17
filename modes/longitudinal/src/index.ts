@@ -92,7 +92,7 @@ function modeFactory({ modeConfiguration }) {
           'Cine',
           'WindowLevel',
           'invert',
-          'Pan',
+          'Reset',
           'Layout',
           'MeasurementTools', //No se ve en pantalla
           'MoreTools', //No se ve en pantalla

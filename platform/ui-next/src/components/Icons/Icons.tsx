@@ -201,6 +201,8 @@ import StatusAlert from './Sources/StatusAlert';
 import Undo from './Sources/Undo';
 import RadoViewerLogo from '../../../../app/public/assets/RadoViewerLogo.png';
 import RadoViewerLogoSmall from '../../../../app/public/assets/RadoViewerLogoSmall.png';
+import MedespacioLogoPeq from '../../../../app/public/assets/MedespacioLogoPeq.png';
+
 //
 //
 type IconProps = React.HTMLAttributes<SVGElement>;
@@ -383,6 +385,12 @@ export const Icons = {
   RadoViewerLogoSmall: (props: ImageIconProps) => (
     <ImageWrapper
       src={RadoViewerLogoSmall}
+      {...props}
+    />
+  ),
+  RadoViewerLogoAbout: (props: ImageIconProps) => (
+    <ImageWrapper
+      src={MedespacioLogoPeq}
       {...props}
     />
   ),
