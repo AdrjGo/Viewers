@@ -84,7 +84,11 @@ const CinePlayer: React.FC<CinePlayerProps> = ({
           <Numeric.SingleRange showNumberInput={false} />
         </Numeric.Container>
       )}
-      <div className={'bg-muted inline-flex select-none items-center gap-2 rounded-md px-2 py-2'}>
+      <div
+        className={
+          'bg-muted inline-flex select-none items-center gap-2 rounded-md px-2 py-2 max-sm:mb-4'
+        }
+      >
         <Button
           variant="ghost"
           size="icon"

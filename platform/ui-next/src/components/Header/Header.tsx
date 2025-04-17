@@ -43,11 +43,11 @@ function Header({
   Secondary,
   ...props
 }: HeaderProps): ReactNode {
-  const onClickReturn = () => {
-    if (isReturnEnabled && onClickReturnButton) {
-      onClickReturnButton();
-    }
-  };
+  // const onClickReturn = () => {
+  //   if (isReturnEnabled && onClickReturnButton) {
+  //     onClickReturnButton();
+  //   }
+  // };
   const logoResponsive = window.innerWidth > 640;
 
   return (
@@ -62,8 +62,8 @@ function Header({
               'mr-3 inline-flex items-center',
               isReturnEnabled && 'cursor-pointer'
             )}
-            onClick={onClickReturn}
-            data-cy="return-to-work-list"
+            // onClick={onClickReturn}
+            // data-cy="return-to-work-list"
           >
             {/* BOTON PARA RETROCEDER  AL WORKLIST*/}
             {/* {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />} */}
@@ -80,7 +80,7 @@ function Header({
 
         <div className="absolute top-1/2 left-[250px] h-8 -translate-y-1/2">{Secondary}</div>
         <div className="absolute top-1/2 left-1/2 -translate-y-1/2 transform max-sm:left-8 max-sm:w-[90%] sm:-translate-x-1/2">
-          <div className="flex items-center justify-center max-sm:w-[65%]">{children}</div>
+          <div className="flex items-center justify-center max-sm:w-[90%]">{children}</div>
         </div>
         <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
           {UndoRedo}

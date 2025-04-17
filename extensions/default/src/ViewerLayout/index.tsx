@@ -22,7 +22,7 @@ function ViewerLayout({
   // From Modes
   viewports,
   ViewportGridComp,
-  leftPanelClosed = panelLeft,
+  leftPanelClosed = false,
   rightPanelClosed = false /*Pruebaaaaaaaa*/,
   leftPanelResizable = false,
   rightPanelResizable = false,
@@ -153,7 +153,7 @@ function ViewerLayout({
       />
       <div
         className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black"
-        style={{ height: 'calc(100vh - 52px' }}
+        style={{ height: 'calc(100svh - 52px' }}
       >
         <React.Fragment>
           {showLoadingIndicator && <LoadingIndicatorProgress className="h-full w-full bg-black" />}
@@ -178,7 +178,7 @@ function ViewerLayout({
             ) : null}
             {/* TOOLBAR + GRID */}
             <ResizablePanel {...resizableViewportGridPanelProps}>
-              <div className="flex h-full flex-1 flex-col max-sm:h-[93dvh]">
+              <div className="flex h-full flex-1 flex-col">
                 <div
                   className="relative flex h-full flex-1 items-center justify-center overflow-hidden bg-black"
                   onMouseEnter={handleMouseEnter}
@@ -199,7 +199,10 @@ function ViewerLayout({
                   disabled={!rightPanelResizable}
                   className={resizableHandleClassName}
                 />
-                <ResizablePanel {...resizableRightPanelProps} className='max-sm:hidden'>
+                <ResizablePanel
+                  {...resizableRightPanelProps}
+                  className="max-sm:hidden"
+                >
                   <SidePanelWithServices
                     side="right"
                     isExpanded={!rightPanelClosedState}

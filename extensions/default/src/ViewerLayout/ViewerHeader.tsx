@@ -52,16 +52,16 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
           containerClassName: 'max-w-md',
         }),
     },
-    {
-      title: t('Header:Preferences'),
-      icon: 'settings',
-      onClick: () =>
-        show({
-          content: UserPreferencesModal,
-          title: t('UserPreferencesModal:User preferences'),
-          containerClassName: 'flex max-w-4xl p-6 flex-col',
-        }),
-    },
+    // {
+    //   title: t('Header:Preferences'),
+    //   icon: 'settings',
+    //   onClick: () =>
+    //     show({
+    //       content: UserPreferencesModal,
+    //       title: t('UserPreferencesModal:User preferences'),
+    //       containerClassName: 'flex max-w-4xl p-6 flex-col',
+    //     }),
+    // },
   ];
 
   if (appConfig.oidc) {
@@ -95,7 +95,7 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
         )
       }
       UndoRedo={
-        <div className="text-primary flex cursor-pointer items-center">
+        <div className="text-primary flex cursor-pointer items-center max-sm:hidden">
           <Button
             variant="ghost"
             className="hover:bg-primary-dark"
@@ -117,7 +117,7 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
         </div>
       }
     >
-      <div className="max-sm:border-primary-dark relative flex justify-between gap-[4px] max-sm:w-[90%] max-sm:overflow-x-auto max-sm:border-l max-sm:border-r max-sm:px-1">
+      <div className="max-sm:border-primary-dark relative flex justify-between gap-[4px] max-sm:w-[90%] max-sm:border-l max-sm:px-1">
         <Toolbar servicesManager={servicesManager} />
       </div>
     </Header>

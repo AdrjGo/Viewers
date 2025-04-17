@@ -135,7 +135,7 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
   return (
     <div
       className={cn(
-        'drag-handle relative flex select-none flex-col space-y-1.5 text-center sm:text-left',
+        'drag-handle relative flex select-none flex-col space-y-1.5 text-center sm:text-left max-sm:w-auto',
         className
       )}
       {...props}

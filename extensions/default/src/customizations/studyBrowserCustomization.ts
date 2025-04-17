@@ -37,11 +37,11 @@ export default {
       iconName: 'ListView',
       selected: true,
     },
-    // {
-    //   id: 'thumbnails',
-    //   iconName: 'ThumbnailView',
-    //   selected: true,
-    // },
+    {
+      id: 'thumbnails',
+      iconName: 'ThumbnailView',
+      selected: true,
+    },
   ],
   'studyBrowser.studyMode': 'primary',
   'studyBrowser.thumbnailDoubleClickCallback': {

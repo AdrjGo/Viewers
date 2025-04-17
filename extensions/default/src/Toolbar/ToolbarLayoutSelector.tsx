@@ -126,6 +126,8 @@ function ToolbarLayoutSelectorWithServices({
     [commandsManager]
   );
 
+  const visibleCommonPresets = window.innerWidth > 640 ? commonPresets : commonPresets.slice(0, 3);
+
   return (
     <div
       id="Layout"
@@ -143,45 +145,18 @@ function ToolbarLayoutSelectorWithServices({
               {commonPresets.length > 0 && (
                 <>
                   <LayoutSelector.PresetSection title="Common">
-                    {window.innerWidth > 640
-                      ? commonPresets.map((preset, index) => (
-                          <LayoutSelector.Preset
-                            key={`common-preset-${index}`}
-                            icon={preset.icon}
-                            commandOptions={preset.commandOptions}
-                            isPreset={false}
-                          />
-                        ))
-                      : commonPresets.slice(0, 3).map((preset, index) => (
-                          <LayoutSelector.Preset
-                            key={`common-preset-${index}`}
-                            icon={preset.icon}
-                            commandOptions={preset.commandOptions}
-                            isPreset={false}
-                          />
-                        ))}
-                  </LayoutSelector.PresetSection>
-                  <LayoutSelector.Divider />
-                </>
-              )}
-              {/* {window.innerWidth > 640
-                  ? commonPresets.map((preset, index) => (
+                    {visibleCommonPresets.map((preset, index) => (
                       <LayoutSelector.Preset
                         key={`common-preset-${index}`}
                         icon={preset.icon}
                         commandOptions={preset.commandOptions}
                         isPreset={false}
                       />
-                    ))
-                  : commonPresets.slice(0, 3).map((preset, index) => (
-                     <LayoutSelector.Preset
-                        key={`common-preset-${index}`}
-                        icon={preset.icon}
-                        commandOptions={preset.commandOptions}
-                        isPreset={false}
-                      />
-                    ))} */}
-
+                    ))}
+                  </LayoutSelector.PresetSection>
+                  <LayoutSelector.Divider />
+                </>
+              )}
               {advancedPresets.length > 0 && (
                 <LayoutSelector.PresetSection title="Advanced">
                   {advancedPresets.map((preset, index) => (

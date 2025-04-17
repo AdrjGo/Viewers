@@ -11,9 +11,11 @@ export function Toolbar({ servicesManager, buttonSection = 'primary' }) {
     return null;
   }
 
+  const visibleButtons = window.innerWidth > 640 ? toolbarButtons : toolbarButtons.slice(0, 6);
+
   return (
     <>
-      {toolbarButtons?.map(toolDef => {
+      {visibleButtons?.map(toolDef => {
         if (!toolDef) {
           return null;
         }

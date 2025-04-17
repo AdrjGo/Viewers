@@ -72,6 +72,31 @@ const extensionDependencies = {
 
 function modeFactory({ modeConfiguration }) {
   let _activatePanelTriggersSubscriptions = [];
+
+  const toolsPrimaryResponsive =
+    window.innerWidth > 640
+      ? [
+          'MeasurementTools',
+          'StackScroll',
+          'Cine',
+          'WindowLevel',
+          'invert',
+          'Zoom',
+          'Pan',
+          'Magnify',
+          'Layout',
+          'MoreTools',
+        ]
+      : [
+          'StackScroll',
+          'Cine',
+          'WindowLevel',
+          'invert',
+          'Pan',
+          'Layout',
+          'MeasurementTools', //No se ve en pantalla
+          'MoreTools', //No se ve en pantalla
+        ];
   return {
     // TODO: We're using this as a route segment
     // We should not be.
@@ -90,18 +115,20 @@ function modeFactory({ modeConfiguration }) {
       // Init Default and SR ToolGroups
       initToolGroups(extensionManager, toolGroupService, commandsManager);
 
+      // CONTROL DE LAS HERRAMIENTAS
       toolbarService.addButtons(toolbarButtons);
-      toolbarService.createButtonSection('primary', [
-        'MeasurementTools',
-        'Zoom',
-        'Pan',
-        'TrackballRotate',
-        'WindowLevel',
-        'Capture',
-        'Layout',
-        'Crosshairs',
-        'MoreTools',
-      ]);
+      toolbarService.createButtonSection('primary', toolsPrimaryResponsive);
+      // toolbarService.createButtonSection('primary', [
+      //   'MeasurementTools',
+      //   'Zoom',
+      //   'Pan',
+      //   'TrackballRotate',
+      //   'WindowLevel',
+      //   'Capture',
+      //   'Layout',
+      //   'Crosshairs',
+      //   'MoreTools',
+      // ]);
 
       toolbarService.createButtonSection('measurementSection', [
         'Length',
@@ -117,24 +144,32 @@ function modeFactory({ modeConfiguration }) {
 
       toolbarService.createButtonSection('moreToolsSection', [
         'Reset',
-        'rotate-right',
-        'flipHorizontal',
-        'ImageSliceSync',
-        'ReferenceLines',
-        'ImageOverlayViewer',
-        'StackScroll',
-        'invert',
-        'Probe',
-        'Cine',
+        'TrackballRotate',
         'Angle',
         'CobbAngle',
-        'Magnify',
-        'CalibrationLine',
+        'Capture',
         'TagBrowser',
-        'AdvancedMagnify',
-        'UltrasoundDirectionalTool',
-        'WindowLevelRegion',
       ]);
+      // toolbarService.createButtonSection('moreToolsSection', [
+      //   'Reset',
+      //   'rotate-right',
+      //   'flipHorizontal',
+      //   'ImageSliceSync',
+      //   'ReferenceLines',
+      //   'ImageOverlayViewer',
+      //   'StackScroll',
+      //   'invert',
+      //   'Probe',
+      //   'Cine',
+      //   'Angle',
+      //   'CobbAngle',
+      //   'Magnify',
+      //   'CalibrationLine',
+      //   'TagBrowser',
+      //   'AdvancedMagnify',
+      //   'UltrasoundDirectionalTool',
+      //   'WindowLevelRegion',
+      // ]);
 
       customizationService.setCustomizations({
         'panelSegmentation.disableEditing': {
