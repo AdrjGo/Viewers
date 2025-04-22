@@ -205,6 +205,22 @@ function modeFactory({ modeConfiguration }) {
       //   ),
       //   true,
       // ];
+
+      ['default', 'mpr', 'SRToolGroup', 'volume3d'].forEach(toolGroupId => {
+        const toolGroup = toolGroupService.getToolGroup(toolGroupId);
+        if (toolGroup) {
+          toolGroup.setToolActive('StackScroll', {
+            bindings: [{ mouseButton: 1 }],
+          });
+          toolGroup.setToolDisabled('WindowLevel');
+        }
+      });
+
+      customizationService.setCustomizations({
+        'panelSegmentation.disableEditing': {
+          $set: true,
+        },
+      });
     },
     onModeExit: ({ servicesManager }: withAppTypes) => {
       const {

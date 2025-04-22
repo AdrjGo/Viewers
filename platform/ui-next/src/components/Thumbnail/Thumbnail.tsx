@@ -162,92 +162,92 @@ const Thumbnail = ({
     );
   };
 
-  const renderListPreset = () => {
-    return (
-      <div
-        className={classnames(
-          'flex h-full w-full items-center justify-between pr-[8px] pl-[8px] pt-[4px] pb-[4px]',
-          isActive && 'bg-popover rounded'
-        )}
-      >
-        <div className="relative flex h-[32px] w-full items-center gap-[8px] overflow-hidden">
-          <div
-            className={classnames(
-              'h-[32px] w-[4px] min-w-[4px] rounded',
-              isActive || isHydratedForDerivedDisplaySet ? 'bg-highlight' : 'bg-primary/65',
-              loadingProgress && loadingProgress < 1 && 'bg-primary/25'
-            )}
-          ></div>
-          <div className="flex h-full w-[calc(100%-12px)] flex-col justify-start">
-            <div className="flex items-center gap-[7px]">
-              <div className="text-[13px] font-semibold text-white">{modality}</div>
-              <Tooltip>
-                <TooltipContent>{description}</TooltipContent>
-                <TooltipTrigger className="w-full overflow-hidden">
-                  <div className="max-w-[160px] overflow-hidden overflow-ellipsis whitespace-nowrap text-left text-[13px] font-normal text-white">
-                    {description}
-                  </div>
-                </TooltipTrigger>
-              </Tooltip>
-            </div>
+  // const renderListPreset = () => {
+  //   return (
+  //     <div
+  //       className={classnames(
+  //         'flex h-full w-full items-center justify-between pr-[8px] pl-[8px] pt-[4px] pb-[4px]',
+  //         isActive && 'bg-popover rounded'
+  //       )}
+  //     >
+  //       <div className="relative flex h-[32px] w-full items-center gap-[8px] overflow-hidden">
+  //         <div
+  //           className={classnames(
+  //             'h-[32px] w-[4px] min-w-[4px] rounded',
+  //             isActive || isHydratedForDerivedDisplaySet ? 'bg-highlight' : 'bg-primary/65',
+  //             loadingProgress && loadingProgress < 1 && 'bg-primary/25'
+  //           )}
+  //         ></div>
+  //         <div className="flex h-full w-[calc(100%-12px)] flex-col justify-start">
+  //           <div className="flex items-center gap-[7px]">
+  //             <div className="text-[13px] font-semibold text-white">{modality}</div>
+  //             <Tooltip>
+  //               <TooltipContent>{description}</TooltipContent>
+  //               <TooltipTrigger className="w-full overflow-hidden">
+  //                 <div className="max-w-[160px] overflow-hidden overflow-ellipsis whitespace-nowrap text-left text-[13px] font-normal text-white">
+  //                   {description}
+  //                 </div>
+  //               </TooltipTrigger>
+  //             </Tooltip>
+  //           </div>
 
-            <div className="flex h-[12px] items-center gap-[7px] overflow-hidden">
-              <div className="text-muted-foreground text-[12px]"> S:{seriesNumber}</div>
-              <div className="text-muted-foreground text-[12px]">
-                <div className="flex items-center gap-[4px]">
-                  {' '}
-                  {countIcon ? (
-                    React.createElement(Icons[countIcon] || Icons.MissingIcon, { className: 'w-3' })
-                  ) : (
-                    <Icons.InfoSeries className="w-3" />
-                  )}
-                  <div>{numInstances}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex h-full items-center gap-[4px]">
-          <DisplaySetMessageListTooltip
-            messages={messages}
-            id={`display-set-tooltip-${displaySetInstanceUID}`}
-          />
-          {isTracked && (
-            <Tooltip>
-              <TooltipTrigger>
-                <div className="group">
-                  <Icons.StatusTracking className="text-primary-light h-[20px] w-[15px] group-hover:hidden" />
-                  <Icons.Cancel
-                    className="text-primary-light hidden h-[15px] w-[15px] group-hover:block"
-                    onClick={onClickUntrack}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent side="right">
-                <div className="flex flex-1 flex-row">
-                  <div className="flex-2 flex items-center justify-center pr-4">
-                    <Icons.InfoLink className="text-primary" />
-                  </div>
-                  <div className="flex flex-1 flex-col">
-                    <span>
-                      <span className="text-white">
-                        {isTracked ? 'Series is tracked' : 'Series is untracked'}
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </TooltipContent>
-            </Tooltip>
-          )}
-          <ThumbnailMenuItems
-            displaySetInstanceUID={displaySetInstanceUID}
-            canReject={canReject}
-            onReject={onReject}
-          />
-        </div>
-      </div>
-    );
-  };
+  //           <div className="flex h-[12px] items-center gap-[7px] overflow-hidden">
+  //             <div className="text-muted-foreground text-[12px]"> S:{seriesNumber}</div>
+  //             <div className="text-muted-foreground text-[12px]">
+  //               <div className="flex items-center gap-[4px]">
+  //                 {' '}
+  //                 {countIcon ? (
+  //                   React.createElement(Icons[countIcon] || Icons.MissingIcon, { className: 'w-3' })
+  //                 ) : (
+  //                   <Icons.InfoSeries className="w-3" />
+  //                 )}
+  //                 <div>{numInstances}</div>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div className="flex h-full items-center gap-[4px]">
+  //         <DisplaySetMessageListTooltip
+  //           messages={messages}
+  //           id={`display-set-tooltip-${displaySetInstanceUID}`}
+  //         />
+  //         {isTracked && (
+  //           <Tooltip>
+  //             <TooltipTrigger>
+  //               <div className="group">
+  //                 <Icons.StatusTracking className="text-primary-light h-[20px] w-[15px] group-hover:hidden" />
+  //                 <Icons.Cancel
+  //                   className="text-primary-light hidden h-[15px] w-[15px] group-hover:block"
+  //                   onClick={onClickUntrack}
+  //                 />
+  //               </div>
+  //             </TooltipTrigger>
+  //             <TooltipContent side="right">
+  //               <div className="flex flex-1 flex-row">
+  //                 <div className="flex-2 flex items-center justify-center pr-4">
+  //                   <Icons.InfoLink className="text-primary" />
+  //                 </div>
+  //                 <div className="flex flex-1 flex-col">
+  //                   <span>
+  //                     <span className="text-white">
+  //                       {isTracked ? 'Series is tracked' : 'Series is untracked'}
+  //                     </span>
+  //                   </span>
+  //                 </div>
+  //               </div>
+  //             </TooltipContent>
+  //           </Tooltip>
+  //         )}
+  //         <ThumbnailMenuItems
+  //           displaySetInstanceUID={displaySetInstanceUID}
+  //           canReject={canReject}
+  //           onReject={onReject}
+  //         />
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div
@@ -255,7 +255,7 @@ const Thumbnail = ({
         className,
         'bg-muted hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
         viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
-        viewPreset === 'list' && 'h-[40px] w-full'
+        // viewPreset === 'list' && 'h-[40px] w-full'
       )}
       id={`thumbnail-${displaySetInstanceUID}`}
       data-cy={
@@ -274,7 +274,7 @@ const Thumbnail = ({
         className="h-full w-full"
       >
         {viewPreset === 'thumbnails' && renderThumbnailPreset()}
-        {viewPreset === 'list' && renderListPreset()}
+        {/* {viewPreset === 'list' && renderListPreset()} */}
       </div>
     </div>
   );

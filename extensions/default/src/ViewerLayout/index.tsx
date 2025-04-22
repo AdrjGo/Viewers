@@ -1,17 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import { InvestigationalUseDialog } from '@ohif/ui-next';
 import { HangingProtocolService, CommandsManager } from '@ohif/core';
 import { useAppConfig } from '@state';
 import ViewerHeader from './ViewerHeader';
 import SidePanelWithServices from '../Components/SidePanelWithServices';
-import { Onboarding, ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@ohif/ui-next';
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@ohif/ui-next';
 import useResizablePanels from './ResizablePanelsHook';
 
 const resizableHandleClassName = 'mt-[1px] bg-black';
-
-const panelLeft = window.innerWidth > 640 ? false : true;
 
 function ViewerLayout({
   // From Extension Module Params
