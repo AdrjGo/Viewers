@@ -63,6 +63,13 @@ function ToolbarLayoutSelectorWithServices({
           },
         },
         {
+          title: 'Axial Primary',
+          icon: 'layout-side-by-side',
+          commandOptions: {
+            protocolId: 'axial-primary',
+          },
+        },
+        {
           title: '3D four up',
           icon: 'layout-four-up',
           commandOptions: {
@@ -74,13 +81,6 @@ function ToolbarLayoutSelectorWithServices({
           icon: 'layout-three-row',
           commandOptions: {
             protocolId: '3d-main',
-          },
-        },
-        {
-          title: 'Axial Primary',
-          icon: 'layout-side-by-side',
-          commandOptions: {
-            protocolId: 'axial-primary',
           },
         },
         {
@@ -127,6 +127,8 @@ function ToolbarLayoutSelectorWithServices({
   );
 
   const visibleCommonPresets = window.innerWidth > 640 ? commonPresets : commonPresets.slice(0, 3);
+  const visibleAdvancePresets =
+    window.innerWidth > 640 ? advancedPresets : advancedPresets.slice(0, 1);
 
   return (
     <div
@@ -159,7 +161,7 @@ function ToolbarLayoutSelectorWithServices({
               )}
               {advancedPresets.length > 0 && (
                 <LayoutSelector.PresetSection title="Advanced">
-                  {advancedPresets.map((preset, index) => (
+                  {visibleAdvancePresets.map((preset, index) => (
                     <LayoutSelector.Preset
                       key={`advanced-preset-${index}`}
                       title={preset.title}

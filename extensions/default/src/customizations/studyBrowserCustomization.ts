@@ -32,11 +32,11 @@ export default {
     },
   ],
   'studyBrowser.viewPresets': [
-    {
-      id: 'list',
-      iconName: 'ListView',
-      selected: false,
-    },
+    // {
+    //   id: 'list',
+    //   iconName: 'ListView',
+    //   selected: false,
+    // },
     {
       id: 'thumbnails',
       iconName: 'ThumbnailView',

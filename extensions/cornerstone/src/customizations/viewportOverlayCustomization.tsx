@@ -20,7 +20,32 @@ export default {
       contentF: ({ referenceInstance }) => referenceInstance.SeriesDescription,
     },
   ],
-  'viewportOverlay.topRight': [],
+  'viewportOverlay.topRight': [
+    {
+      id: 'PatientNameOverlay',
+      inheritsFrom: 'ohif.overlayItem',
+      attribute: 'PatientName',
+      title: 'Patient Name',
+      condition: ({ referenceInstance }) =>
+        referenceInstance &&
+        referenceInstance.PatientName &&
+        referenceInstance.PatientName.Alphabetic,
+      contentF: ({ referenceInstance, formatters: { formatPN } }) =>
+        formatPN(referenceInstance.PatientName.Alphabetic) +
+        ' ' +
+        (referenceInstance.PatientSex ? '(' + referenceInstance.PatientSex + ')' : ''),
+    },
+    // {
+    //   id: 'PatientID',
+    //   inheritsFrom: 'ohif.overlayItem',
+    //   label: '',
+    //   title: 'Patient ID',
+    //   condition: ({ referenceInstance }) => {
+    //     return referenceInstance && referenceInstance.PatientID;
+    //   },
+    //   contentF: ({ referenceInstance }) => referenceInstance.PatientID,
+    // },
+  ],
   'viewportOverlay.bottomLeft': [
     {
       id: 'WindowLevel',

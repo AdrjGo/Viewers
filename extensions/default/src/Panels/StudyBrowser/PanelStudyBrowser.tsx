@@ -81,6 +81,8 @@ function PanelStudyBrowser({
 
   const mapDisplaySetsWithState = customMapDisplaySets || _mapDisplaySets;
 
+  const { panelService } = servicesManager.services;
+
   const onDoubleClickThumbnailHandler = useCallback(
     async displaySetInstanceUID => {
       const customHandler = customizationService.getCustomization(
@@ -96,7 +98,9 @@ function PanelStudyBrowser({
       };
 
       const handlers = customHandler?.callbacks.map(callback => callback(setupArgs));
-
+      panelService._broadcastEvent(panelService.EVENTS.PANELS_CHANGED, {
+        options: { leftPanelClosed: true },
+      });
       for (const handler of handlers) {
         await handler(displaySetInstanceUID);
       }
