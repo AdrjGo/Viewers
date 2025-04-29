@@ -87,3 +87,23 @@ input[type='range'].scrollbarInput::-moz-range-track {
 .scrollbarInput:focus {
   outline: none;
 }
+
+@media (max-width: 640px) {
+  .scrollbarContainer {
+    padding: 5px 0 5px 0;
+    z-index: 50;
+  }
+
+  .scrollbarInner {
+    width: 14px;
+  }
+
+  .scrollbarInput {
+    left: 13px;
+  }
+
+  input[type='range'].scrollbarInput::-webkit-slider-thumb {
+    height: 23px;
+    width: 45px;
+  }
+}

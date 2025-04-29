@@ -28,4 +28,7 @@ line, it will be truncated with ellipsis in the end.
   .viewport-overlay span {
     font-size: 10px;
   }
+  .viewport-overlay {
+    margin-right: 10px;
+  }
 }

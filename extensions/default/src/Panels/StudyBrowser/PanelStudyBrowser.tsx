@@ -3,7 +3,7 @@ import { useImageViewer } from '@ohif/ui-next';
 import { useSystem, utils } from '@ohif/core';
 import { useNavigate } from 'react-router-dom';
 import { useViewportGrid, StudyBrowser, Separator } from '@ohif/ui-next';
-import { PanelStudyBrowserHeader } from './PanelStudyBrowserHeader';
+// import { PanelStudyBrowserHeader } from './PanelStudyBrowserHeader';
 import { defaultActionIcons } from './constants';
 import MoreDropdownMenu from '../../Components/MoreDropdownMenu';
 import { CallbackCustomization } from 'platform/core/src/types';
@@ -97,10 +97,13 @@ function PanelStudyBrowser({
         appConfig: extensionManager._appConfig,
       };
 
+      if (window.innerWidth < 640) {
+        panelService._broadcastEvent(panelService.EVENTS.PANELS_CHANGED, {
+          options: { leftPanelClosed: true },
+        });
+      }
+
       const handlers = customHandler?.callbacks.map(callback => callback(setupArgs));
-      panelService._broadcastEvent(panelService.EVENTS.PANELS_CHANGED, {
-        options: { leftPanelClosed: true },
-      });
       for (const handler of handlers) {
         await handler(displaySetInstanceUID);
       }
@@ -409,12 +412,12 @@ function PanelStudyBrowser({
   return (
     <>
       <>
-        <PanelStudyBrowserHeader
+        {/* <PanelStudyBrowserHeader
           viewPresets={viewPresets}
           updateViewPresetValue={updateViewPresetValue}
           actionIcons={actionIcons}
           updateActionIconValue={updateActionIconValue}
-        />
+        /> */}
         <Separator
           orientation="horizontal"
           className="bg-black"

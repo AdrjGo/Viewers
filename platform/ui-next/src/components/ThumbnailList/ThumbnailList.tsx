@@ -14,14 +14,20 @@ const ThumbnailList = ({
   ThumbnailMenuItems,
 }) => {
   // Use the dynamic height hook on the parent container
-  const { ref, maxHeight } = useDynamicMaxHeight(thumbnails);
+  const { ref } = useDynamicMaxHeight(thumbnails);
+
+  const correctedThumbnails = thumbnails?.filter(
+    t =>
+      !t.description?.toLowerCase().includes('uncorrected') &&
+      !t.SeriesDescription?.toLowerCase().includes('uncorrected')
+  );
 
   // Filter thumbnails into list items and thumbnail items
-  const listItems = thumbnails?.filter(
+  const listItems = correctedThumbnails?.filter(
     ({ componentType }) => componentType === 'thumbnailNoImage' || viewPreset === 'list'
   );
 
-  const thumbnailItems = thumbnails?.filter(
+  const thumbnailItems = correctedThumbnails?.filter(
     ({ componentType }) => componentType !== 'thumbnailNoImage' && viewPreset === 'thumbnails'
   );
 
