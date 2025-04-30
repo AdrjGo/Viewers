@@ -460,19 +460,17 @@ const SidePanel = ({
       className={classnames(className, baseClasses)}
       style={style}
     >
-      {panelOpen ? (
-        <>
-          {getOpenStateComponent()}
-          {tabs.map((tab, tabIndex) => {
-            if (tabIndex === activeTabIndex) {
-              return <tab.content key={tabIndex} />;
-            }
-            return null;
-          })}
-        </>
-      ) : (
-        <React.Fragment>{getCloseStateComponent()}</React.Fragment>
-      )}
+      <div style={{ display: panelOpen ? 'contents' : 'none' }}>
+        {getOpenStateComponent()}
+        {tabs.map((tab, tabIndex) => {
+          if (tabIndex === activeTabIndex) {
+            return <tab.content key={tabIndex} />;
+          }
+          return null;
+        })}
+      </div>
+
+      <div style={{ display: panelOpen ? 'none' : 'contents' }}>{getCloseStateComponent()}</div>
     </div>
   );
 };
