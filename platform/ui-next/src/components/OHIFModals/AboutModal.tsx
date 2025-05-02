@@ -70,12 +70,15 @@ interface DetailItemProps {
   label: string;
   value: string;
   className?: string;
+  mail?: boolean;
 }
-function DetailItem({ label, value, className }: DetailItemProps) {
+function DetailItem({ label, value, className, mail = false }: DetailItemProps) {
   return (
     <div className={cn('flex flex-col items-center', className)}>
       <div className="text-muted-foreground pt-2 text-sm font-semibold tracking-wide">{label}</div>
-      <div className="text-muted-foreground text-sm">{value}</div>
+      <div className="text-muted-foreground text-sm">
+        {mail ? <a href={`mailto:${value}`}>{value}</a> : value}
+      </div>
     </div>
   );
 }

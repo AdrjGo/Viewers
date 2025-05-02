@@ -39,7 +39,7 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
   const { show } = useModal();
 
   const AboutModal = customizationService.getCustomization('ohif.aboutModal');
-  const UserPreferencesModal = customizationService.getCustomization('ohif.userPreferencesModal');
+  // const UserPreferencesModal = customizationService.getCustomization('ohif.userPreferencesModal');
 
   const menuOptions = [
     {
@@ -48,7 +48,7 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
       onClick: () =>
         show({
           content: AboutModal,
-          title: t('AboutModal:Medespacio SRL'),
+          title: t(`AboutModal:RadoViewer - Lite`),
           containerClassName: 'max-w-md',
         }),
     },

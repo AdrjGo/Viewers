@@ -132,7 +132,7 @@ export default function PanelSegmentation({ children }: withAppTypes) {
     disabled,
     data: segmentationsWithRepresentations,
     mode: segmentationTableMode,
-    title: 'Segmentations',
+    title: 'Segmentaciones',
     exportOptions,
     disableEditing,
     onSegmentationAdd,

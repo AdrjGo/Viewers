@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { useDrag } from 'react-dnd';
@@ -47,14 +47,34 @@ const Thumbnail = ({
 
   const [lastTap, setLastTap] = useState(0);
 
+  const startTouchRef = useRef({ x: 0, y: 0 });
+
+  const handleTouchStart = e => {
+    const touch = e.touches[0];
+    startTouchRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+    };
+  };
+
   const handleTouchEnd = e => {
+    const touch = e.changedTouches[0];
+    const dx = Math.abs(touch.clientX - startTouchRef.current.x);
+    const dy = Math.abs(touch.clientY - startTouchRef.current.y);
+
+    const moved = dx > 10 || dy > 10;
+
+    if (moved) return;
+
     const currentTime = new Date().getTime();
     const tapLength = currentTime - lastTap;
-    if (tapLength < 300 && tapLength > 0) {
+
+    if (tapLength < 300 && tapLength > 60) {
       onDoubleClick(e);
     } else {
-      onClick(e);
+      onDoubleClick(e);
     }
+
     setLastTap(currentTime);
   };
 
@@ -253,7 +273,7 @@ const Thumbnail = ({
     <div
       className={classnames(
         className,
-        'bg-muted hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
+        'bg-muted sm:hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
         viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
         // viewPreset === 'list' && 'h-[40px] w-full'
       )}
@@ -264,9 +284,10 @@ const Thumbnail = ({
           : 'study-browser-thumbnail'
       }
       data-series={seriesNumber}
-      onClick={onClick}
+      onClick={onDoubleClick}
       onDoubleClick={onDoubleClick}
       onTouchEnd={handleTouchEnd}
+      onTouchStart={handleTouchStart}
       role="button"
     >
       <div
