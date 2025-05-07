@@ -7,6 +7,7 @@ import ViewerHeader from './ViewerHeader';
 import SidePanelWithServices from '../Components/SidePanelWithServices';
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@ohif/ui-next';
 import useResizablePanels from './ResizablePanelsHook';
+import { useSearchParams } from 'react-router-dom';
 
 const resizableHandleClassName = 'mt-[1px] bg-black';
 
@@ -20,7 +21,7 @@ function ViewerLayout({
   viewports,
   ViewportGridComp,
   leftPanelClosed = false,
-  rightPanelClosed = false /*Pruebaaaaaaaa*/,
+  rightPanelClosed = false,
   leftPanelResizable = false,
   rightPanelResizable = false,
 }: withAppTypes): React.FunctionComponent {
@@ -140,6 +141,10 @@ function ViewerLayout({
 
   const viewportComponents = viewports.map(getViewportComponentData);
 
+  const isMobile = window.innerWidth < 640;
+  const [params] = useSearchParams();
+  const customerKey = params.get('customerKey');
+
   return (
     <div>
       <ViewerHeader
@@ -149,8 +154,14 @@ function ViewerLayout({
         appConfig={appConfig}
       />
       <div
-        className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black"
-        style={{ height: 'calc(100svh - 52px' }}
+        className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black max-sm:fixed max-sm:z-50"
+        style={{
+          height:
+            !leftPanelClosedState === true && customerKey === '528' && isMobile
+              ? 'calc(100svh - 0px)'
+              : 'calc(100svh - 52px)',
+          top: !leftPanelClosedState === true && customerKey === '528' ? '0' : 'auto',
+        }}
       >
         <React.Fragment>
           {showLoadingIndicator && <LoadingIndicatorProgress className="h-full w-full bg-black" />}

@@ -34,14 +34,14 @@ const NotFoundStudy = () => {
     <div className="absolute flex h-full w-full items-center justify-center text-white">
       <div>
         <h4>
-          One or more of the requested studies are not available at this time. Return to the{' '}
+          Uno o más de los estudios solicitados no están disponibles en este momento. Volver a la{' '}
           <Link
             className="text-primary-light"
-            to={'/'}
+            to={'javascript:history.back()'}
           >
-            study list
+            página anterior
           </Link>{' '}
-          to select a different study to view.
+          para seleccionar y ver un estudio diferente.
         </h4>
       </div>
     </div>
@@ -127,16 +127,16 @@ const createRoutes = ({
   function RouteWithErrorBoundary({ route, ...rest }) {
     // eslint-disable-next-line react/jsx-props-no-spreading
     return (
-      <ErrorBoundary context={`Route ${route.path}`}>
-        <route.children
-          {...rest}
-          {...route.props}
-          route={route}
-          servicesManager={servicesManager}
-          extensionManager={extensionManager}
-          hotkeysManager={hotkeysManager}
-        />
-      </ErrorBoundary>
+      // <ErrorBoundary context={`Route ${route.path}`}>
+      <route.children
+        {...rest}
+        {...route.props}
+        route={route}
+        servicesManager={servicesManager}
+        extensionManager={extensionManager}
+        hotkeysManager={hotkeysManager}
+      />
+      // </ErrorBoundary>
     );
   }
 

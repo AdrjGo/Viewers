@@ -58,10 +58,7 @@ function Header({
       <div className="relative h-[48px] w-full items-center">
         <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center justify-between">
           <div
-            className={classNames(
-              'mr-3 inline-flex items-center',
-              isReturnEnabled && 'cursor-pointer'
-            )}
+            className={classNames('mr-3 inline-flex items-center', isReturnEnabled)}
             // onClick={onClickReturn}
             // data-cy="return-to-work-list"
           >

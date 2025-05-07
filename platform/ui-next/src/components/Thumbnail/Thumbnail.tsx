@@ -82,23 +82,22 @@ const Thumbnail = ({
     return (
       <div
         className={classnames(
-          'flex h-full w-full flex-col items-center justify-center gap-[2px] p-[4px]',
+          'flex h-full w-full items-center gap-4 p-2 sm:flex-col sm:justify-center sm:gap-[2px] sm:p-[4px]',
           isActive && 'bg-popover rounded'
         )}
       >
-        <div className="h-[114px] w-[128px]">
+        <div className="h-24 w-40 sm:h-[114px] sm:w-[128px]">
           <div className="relative">
             {imageSrc ? (
               <img
                 src={imageSrc}
                 alt={imageAltText}
-                className="h-[114px] w-[128px] rounded"
+                className="h-24 w-40 rounded sm:h-[114px] sm:w-[128px]"
                 crossOrigin="anonymous"
               />
             ) : (
               <div className="bg-background h-[114px] w-[128px] rounded"></div>
             )}
-
             {/* bottom left */}
             <div className="absolute bottom-0 left-0 flex h-[14px] items-center gap-[4px] rounded-tr pt-[10px] pb-[10px] pr-[6px] pl-[5px]">
               <div
@@ -155,17 +154,20 @@ const Thumbnail = ({
             </div>
           </div>
         </div>
-        <div className="flex h-[52px] w-[128px] flex-col justify-start pt-px">
+        <div className="flex h-[52px] w-full flex-col justify-start pt-px sm:w-[128px]">
           <Tooltip>
             <TooltipContent>{description}</TooltipContent>
             <TooltipTrigger>
-              <div className="min-h-[18px] w-[128px] overflow-hidden text-ellipsis whitespace-nowrap pb-0.5 pl-1 text-left text-[12px] font-normal leading-4 text-white">
+              <div className="text-wrap min-h-[18px] w-full overflow-hidden text-ellipsis pb-0.5 pl-1 text-left text-lg font-semibold leading-4 text-white sm:w-[128px] sm:whitespace-nowrap sm:text-[12px] sm:font-normal">
                 {description}
               </div>
             </TooltipTrigger>
           </Tooltip>
           <div className="flex h-[12px] items-center gap-[7px] overflow-hidden">
-            <div className="text-muted-foreground pl-1 text-[11px]"> S:{seriesNumber}</div>
+            <div className="text-muted-foreground pl-1 text-base sm:text-[11px]">
+              {' '}
+              S:{seriesNumber}
+            </div>
             <div className="text-muted-foreground text-[11px]">
               <div className="flex items-center gap-[4px]">
                 {countIcon ? (
@@ -173,7 +175,7 @@ const Thumbnail = ({
                 ) : (
                   <Icons.InfoSeries className="w-3" />
                 )}
-                <div>{numInstances}</div>
+                <div className="text-base">{numInstances}</div>
               </div>
             </div>
           </div>
@@ -274,7 +276,7 @@ const Thumbnail = ({
       className={classnames(
         className,
         'bg-muted sm:hover:bg-primary/30 group flex cursor-pointer select-none flex-col rounded outline-none',
-        viewPreset === 'thumbnails' && 'h-[170px] w-[135px]',
+        viewPreset === 'thumbnails' && 'h-28 w-full sm:h-[170px] sm:w-[135px]'
         // viewPreset === 'list' && 'h-[40px] w-full'
       )}
       id={`thumbnail-${displaySetInstanceUID}`}

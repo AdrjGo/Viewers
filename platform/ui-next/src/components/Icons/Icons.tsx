@@ -202,6 +202,7 @@ import Undo from './Sources/Undo';
 import RadoViewerLogo from '../../../../app/public/assets/RadoViewerLogo.png';
 import RadoViewerLogoSmall from '../../../../app/public/assets/RadoViewerLogoSmall.png';
 import MedespacioLogoPeq from '../../../../app/public/assets/MedespacioLogoPeq.png';
+import classNames from 'classnames';
 
 //
 //
@@ -214,7 +215,7 @@ const ImageWrapper = ({ src, ...props }: { src: string } & ImageIconProps) => {
       src={src}
       {...props}
       alt=""
-      className="h-10 max-sm:h-7"
+      className={classNames('h-10 max-sm:max-h-20', props.className)}
     />
   );
 };
@@ -397,6 +398,12 @@ export const Icons = {
   VolumeRendering: (props: ImageIconProps) => (
     <ImageWrapper
       src={VolumeRendering}
+      {...props}
+    />
+  ),
+  LogoClient: (props: ImageIconProps) => (
+    <ImageWrapper
+      src={props.src}
       {...props}
     />
   ),

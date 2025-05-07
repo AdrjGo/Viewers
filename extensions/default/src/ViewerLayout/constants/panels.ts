@@ -3,8 +3,11 @@ const collapsedInsideBorderSize = 4;
 const collapsedOutsideBorderSize = 4;
 const collapsedWidth = 25;
 
-const rightPanelInitialExpandedWidth = 280;
-const leftPanelInitialExpandedWidth = 284;
+const searchParams = new URLSearchParams(window.location.search);
+const customerKey = searchParams.get('customerKey');
+
+const rightPanelInitialExpandedWidth = window.innerWidth < 640 ? 0 : 280;
+const leftPanelInitialExpandedWidth = window.innerWidth < 640 && customerKey === '528' ? 430 : 284;
 
 const panelGroupDefinition = {
   groupId: 'viewerLayoutResizablePanelGroup',

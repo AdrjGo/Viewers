@@ -18,6 +18,8 @@ window.config = {
   strictZSpacingForVolumeViewport: true,
   groupEnabledModesFirst: true,
   allowMultiSelectExport: false,
+  useNorm16Texture: false,
+  useFloat32PixelData: false,
   maxNumRequests: {
     interaction: 100,
     thumbnail: 75,
