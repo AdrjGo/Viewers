@@ -11,7 +11,7 @@ function AboutModalDefault() {
     <>
       <AboutModal className="w-[400px] max-sm:w-auto">
         <AboutModal.ProductName>
-          <Icons.RadoViewerLogoAbout />
+          <Icons.Medespacio />
         </AboutModal.ProductName>
         {/* <AboutModal.ProductVersion>{main}</AboutModal.ProductVersion> */}
         {/* {beta && <AboutModal.ProductBeta>{beta}</AboutModal.ProductBeta>} */}
