@@ -1,5 +1,42 @@
+import React from 'react';
+import { Icons } from '../../../../platform/ui-next/src/components/Icons/Icons';
+import { clientLogosSmall } from '../../../../platform/ui-next/src/components/customerkey';
+
+const customerKey = new URLSearchParams(window.location.search).get('customerKey');
+
 export default {
   'viewportOverlay.topLeft': [
+    {
+      id: 'ClientLogoOverlay',
+      inheritsFrom: 'ohif.overlayItem',
+      attribute: 'ClientCode',
+      title: 'Logo de la Empresa',
+      contentF: () => (
+        <Icons.LogoClient
+          className="h-20 object-cover p-2"
+          src={clientLogosSmall[customerKey]}
+          style={{
+            filter: 'drop-shadow(0 0 2px white) drop-shadow(0 0 4px white)',
+          }}
+        />
+      ),
+    },
+  ],
+  'viewportOverlay.topRight': [
+    {
+      id: 'PatientNameOverlay',
+      inheritsFrom: 'ohif.overlayItem',
+      attribute: 'PatientName',
+      title: 'Patient Name',
+      condition: ({ referenceInstance }) =>
+        referenceInstance &&
+        referenceInstance.PatientName &&
+        referenceInstance.PatientName.Alphabetic,
+      contentF: ({ referenceInstance, formatters: { formatPN } }) =>
+        formatPN(referenceInstance.PatientName.Alphabetic) +
+        ' ' +
+        (referenceInstance.PatientSex ? '(' + referenceInstance.PatientSex + ')' : ''),
+    },
     {
       id: 'StudyDate',
       inheritsFrom: 'ohif.overlayItem',
@@ -19,32 +56,6 @@ export default {
       },
       contentF: ({ referenceInstance }) => referenceInstance.SeriesDescription,
     },
-  ],
-  'viewportOverlay.topRight': [
-    {
-      id: 'PatientNameOverlay',
-      inheritsFrom: 'ohif.overlayItem',
-      attribute: 'PatientName',
-      title: 'Patient Name',
-      condition: ({ referenceInstance }) =>
-        referenceInstance &&
-        referenceInstance.PatientName &&
-        referenceInstance.PatientName.Alphabetic,
-      contentF: ({ referenceInstance, formatters: { formatPN } }) =>
-        formatPN(referenceInstance.PatientName.Alphabetic) +
-        ' ' +
-        (referenceInstance.PatientSex ? '(' + referenceInstance.PatientSex + ')' : ''),
-    },
-    // {
-    //   id: 'PatientID',
-    //   inheritsFrom: 'ohif.overlayItem',
-    //   label: '',
-    //   title: 'Patient ID',
-    //   condition: ({ referenceInstance }) => {
-    //     return referenceInstance && referenceInstance.PatientID;
-    //   },
-    //   contentF: ({ referenceInstance }) => referenceInstance.PatientID,
-    // },
   ],
   'viewportOverlay.bottomLeft': [
     {

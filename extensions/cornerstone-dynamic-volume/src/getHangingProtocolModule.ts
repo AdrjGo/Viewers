@@ -48,7 +48,7 @@ function getPTViewports() {
     {
       viewportOptions: {
         viewportId: 'ptAxial',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'axial',
         toolGroupId: toolGroupIds.pt,
         initialImageOptions: {
@@ -79,7 +79,7 @@ function getPTViewports() {
     {
       viewportOptions: {
         viewportId: 'ptSagittal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'sagittal',
         toolGroupId: toolGroupIds.pt,
         initialImageOptions: {
@@ -110,7 +110,7 @@ function getPTViewports() {
     {
       viewportOptions: {
         viewportId: 'ptCoronal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'coronal',
         toolGroupId: toolGroupIds.pt,
         initialImageOptions: {
@@ -157,7 +157,7 @@ function getFusionViewports() {
     {
       viewportOptions: {
         viewportId: 'fusionAxial',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'axial',
         toolGroupId: toolGroupIds.fusion,
         initialImageOptions: {
@@ -215,7 +215,7 @@ function getFusionViewports() {
     {
       viewportOptions: {
         viewportId: 'fusionSagittal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'sagittal',
         toolGroupId: toolGroupIds.fusion,
         initialImageOptions: {
@@ -273,7 +273,7 @@ function getFusionViewports() {
     {
       viewportOptions: {
         viewportId: 'fusionCoronal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'coronal',
         toolGroupId: toolGroupIds.fusion,
         initialImageOptions: {
@@ -356,7 +356,7 @@ function getCTViewports() {
     {
       viewportOptions: {
         viewportId: 'ctAxial',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'axial',
         toolGroupId: toolGroupIds.ct,
         initialImageOptions: {
@@ -386,7 +386,7 @@ function getCTViewports() {
     {
       viewportOptions: {
         viewportId: 'ctSagittal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'sagittal',
         toolGroupId: toolGroupIds.ct,
         initialImageOptions: {
@@ -416,7 +416,7 @@ function getCTViewports() {
     {
       viewportOptions: {
         viewportId: 'ctCoronal',
-        viewportType: 'volume',
+        viewportType: 'stack',
         orientation: 'coronal',
         toolGroupId: toolGroupIds.ct,
         initialImageOptions: {

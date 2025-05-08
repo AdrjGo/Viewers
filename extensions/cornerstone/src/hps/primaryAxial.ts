@@ -3,7 +3,7 @@ import { HYDRATE_SEG_SYNC_GROUP, VOI_SYNC_GROUP } from './mpr';
 export const primaryAxial = {
   id: 'primaryAxial',
   locked: true,
-  name: 'Axial Primary',
+  name: 'Primario Axial',
   icon: 'layout-advanced-axial-primary',
   isPreset: true,
   createdDate: '2023-03-15T10:29:44.894Z',
@@ -63,7 +63,7 @@ export const primaryAxial = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'axial',
             initialImageOptions: {
               preset: 'middle',
@@ -79,7 +79,7 @@ export const primaryAxial = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'sagittal',
             initialImageOptions: {
               preset: 'middle',
@@ -95,7 +95,7 @@ export const primaryAxial = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'coronal',
             initialImageOptions: {
               preset: 'middle',

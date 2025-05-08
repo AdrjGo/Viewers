@@ -3,7 +3,7 @@ import { HYDRATE_SEG_SYNC_GROUP, VOI_SYNC_GROUP } from './mpr';
 export const fourUp = {
   id: 'fourUp',
   locked: true,
-  name: '3D four up',
+  name: '3D arriba',
   icon: 'layout-advanced-3d-four-up',
   isPreset: true,
   createdDate: '2023-03-15T10:29:44.894Z',
@@ -43,7 +43,7 @@ export const fourUp = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'axial',
             initialImageOptions: {
               preset: 'middle',
@@ -82,7 +82,7 @@ export const fourUp = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'coronal',
             initialImageOptions: {
               preset: 'middle',
@@ -98,7 +98,7 @@ export const fourUp = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'sagittal',
             initialImageOptions: {
               preset: 'middle',

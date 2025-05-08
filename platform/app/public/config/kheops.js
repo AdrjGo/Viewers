@@ -17,11 +17,11 @@ window.config = {
   strictZSpacingForVolumeViewport: true,
   groupEnabledModesFirst: true,
   maxNumRequests: {
-    interaction: 100,
-    thumbnail: 75,
+    interaction: 50,
+    thumbnail: 25,
     // Prefetch number is dependent on the http protocol. For http 2 or
     // above, the number of requests can be go a lot higher.
-    prefetch: 25,
+    prefetch: 10,
   },
   // filterQueryParam: false,
   // Uses the ohif datasource as the default - this requires that KHEOPS be

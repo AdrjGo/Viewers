@@ -3,7 +3,7 @@ import { HYDRATE_SEG_SYNC_GROUP, VOI_SYNC_GROUP } from './mpr';
 export const primary3D = {
   id: 'primary3D',
   locked: true,
-  name: '3D primary',
+  name: '3D primario',
   icon: 'layout-advanced-3d-primary',
   isPreset: true,
   createdDate: '2023-03-15T10:29:44.894Z',
@@ -91,7 +91,7 @@ export const primary3D = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'axial',
             initialImageOptions: {
               preset: 'middle',
@@ -107,7 +107,7 @@ export const primary3D = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'coronal',
             initialImageOptions: {
               preset: 'middle',
@@ -123,7 +123,7 @@ export const primary3D = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'sagittal',
             initialImageOptions: {
               preset: 'middle',

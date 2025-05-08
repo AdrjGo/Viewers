@@ -146,7 +146,7 @@ function ToolbarLayoutSelectorWithServices({
             <div className="bg-popover flex flex-col gap-2.5 rounded-lg p-2">
               {commonPresets.length > 0 && (
                 <>
-                  <LayoutSelector.PresetSection title="Common">
+                  <LayoutSelector.PresetSection title="Común">
                     {visibleCommonPresets.map((preset, index) => (
                       <LayoutSelector.Preset
                         key={`common-preset-${index}`}
@@ -160,7 +160,7 @@ function ToolbarLayoutSelectorWithServices({
                 </>
               )}
               {advancedPresets.length > 0 && (
-                <LayoutSelector.PresetSection title="Advanced">
+                <LayoutSelector.PresetSection title="Avanzado">
                   {visibleAdvancePresets.map((preset, index) => (
                     <LayoutSelector.Preset
                       key={`advanced-preset-${index}`}
@@ -178,14 +178,14 @@ function ToolbarLayoutSelectorWithServices({
 
           {/* Right Side - Grid Layout */}
           <div className="bg-muted flex flex-col gap-2.5 border-l-2 border-solid border-black p-2 max-sm:hidden">
-            <div className="text-muted-foreground text-xs">Custom</div>
+            <div className="text-muted-foreground text-xs">Personalizado</div>
             <LayoutSelector.GridSelector
               rows={rows}
               columns={columns}
             />
             <LayoutSelector.HelpText>
-              Hover to select <br />
-              rows and columns <br /> Click to apply
+              Coloca el cursor para <br />
+              seleccionar filas y columnas. <br /> Haga clic para aplicar.
             </LayoutSelector.HelpText>
           </div>
         </LayoutSelector.Content>

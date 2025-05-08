@@ -85,7 +85,7 @@ export const mpr: Types.HangingProtocol.Protocol = {
           viewportOptions: {
             viewportId: 'mpr-axial',
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'axial',
             initialImageOptions: {
               preset: 'middle',
@@ -102,7 +102,7 @@ export const mpr: Types.HangingProtocol.Protocol = {
           viewportOptions: {
             viewportId: 'mpr-sagittal',
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'sagittal',
             initialImageOptions: {
               preset: 'middle',
@@ -119,7 +119,7 @@ export const mpr: Types.HangingProtocol.Protocol = {
           viewportOptions: {
             viewportId: 'mpr-coronal',
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'coronal',
             initialImageOptions: {
               preset: 'middle',

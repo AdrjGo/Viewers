@@ -50,7 +50,7 @@ export const mprAnd3DVolumeViewport = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'axial',
             initialImageOptions: {
               preset: 'middle',
@@ -89,7 +89,7 @@ export const mprAnd3DVolumeViewport = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'coronal',
             initialImageOptions: {
               preset: 'middle',
@@ -105,7 +105,7 @@ export const mprAnd3DVolumeViewport = {
         {
           viewportOptions: {
             toolGroupId: 'mpr',
-            viewportType: 'volume',
+            viewportType: 'stack',
             orientation: 'sagittal',
             initialImageOptions: {
               preset: 'middle',

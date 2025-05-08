@@ -216,6 +216,7 @@ const ImageWrapper = ({ src, ...props }: { src: string } & ImageIconProps) => {
       {...props}
       alt=""
       className={classNames('h-10 max-sm:max-h-20', props.className)}
+      style={props.style}
     />
   );
 };
@@ -389,7 +390,7 @@ export const Icons = {
       {...props}
     />
   ),
-  RadoViewerLogoAbout: (props: ImageIconProps) => (
+  Medespacio: (props: ImageIconProps) => (
     <ImageWrapper
       src={MedespacioLogoPeq}
       {...props}

@@ -254,7 +254,7 @@ const commandsModule = ({ commandsManager, servicesManager }: withAppTypes) => {
             ],
             viewportOptions: {
               initialImageOptions: viewportOptions.initialImageOptions,
-              viewportType: 'volume',
+              viewportType: 'stack',
               orientation: viewportOptions.orientation,
               background: viewportOptions.background,
             },

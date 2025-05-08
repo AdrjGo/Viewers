@@ -98,7 +98,7 @@ function OHIFCornerstonePMAPViewport(props: withAppTypes) {
         // Referenced + PMAP displaySets must be passed as parameter in this order
         displaySets={[referencedDisplaySet, pmapDisplaySet]}
         viewportOptions={{
-          viewportType: 'volume',
+          viewportType: 'stack',
           orientation: viewportOptions.orientation,
           viewportId: viewportOptions.viewportId,
           presentationIds: viewportOptions.presentationIds,

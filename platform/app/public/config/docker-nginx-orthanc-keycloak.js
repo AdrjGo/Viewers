@@ -12,9 +12,9 @@ window.config = {
   strictZSpacingForVolumeViewport: true,
   groupEnabledModesFirst: true,
   maxNumRequests: {
-    interaction: 100,
-    thumbnail: 75,
-    prefetch: 25,
+    interaction: 50,
+    thumbnail: 25,
+    prefetch: 10,
   },
   defaultDataSourceName: 'dicomweb',
   dataSources: [

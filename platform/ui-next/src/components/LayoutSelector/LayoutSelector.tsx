@@ -214,9 +214,7 @@ const PresetSection = ({ children, title, className }: PresetSectionProps) => {
     <div className={cn('flex flex-col gap-2', className)}>
       <div className="text-muted-foreground text-xs">{title}</div>
       {React.Children.count(children) > 0 && (
-        <div
-          className={cn(title.toLowerCase() === 'common' ? 'flex gap-2' : 'flex flex-col gap-0')}
-        >
+        <div className={cn(title.toLowerCase() === 'común' ? 'flex gap-2' : 'flex flex-col gap-0')}>
           {children}
         </div>
       )}

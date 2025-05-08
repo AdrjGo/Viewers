@@ -25,7 +25,7 @@ window.config = {
     thumbnail: 75,
     // Prefetch number is dependent on the http protocol. For http 2 or
     // above, the number of requests can be go a lot higher.
-    prefetch: 25,
+    prefetch: 10,
   },
   // filterQueryParam: false,
   // Defines multi-monitor layouts
@@ -117,6 +117,7 @@ window.config = {
         supportsFuzzyMatching: true,
         supportsWildcard: false,
         staticWado: true,
+        recycleViewports: true,
         singlepart: 'bulkdata,video',
         // whether the data source should use retrieveBulkData to grab metadata,
         // and in case of relative path, what would it be relative to, options

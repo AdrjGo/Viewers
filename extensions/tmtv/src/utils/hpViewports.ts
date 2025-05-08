@@ -19,7 +19,7 @@ const hydrateSegSync = {
 const ctAXIAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ctAXIAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'axial',
     toolGroupId: 'ctToolGroup',
     initialImageOptions: {
@@ -50,7 +50,7 @@ const ctAXIAL: AppTypes.HangingProtocol.Viewport = {
 const ctSAGITTAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ctSAGITTAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'sagittal',
     toolGroupId: 'ctToolGroup',
     syncGroups: [
@@ -77,7 +77,7 @@ const ctSAGITTAL: AppTypes.HangingProtocol.Viewport = {
 const ctCORONAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ctCORONAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'coronal',
     toolGroupId: 'ctToolGroup',
     syncGroups: [
@@ -104,7 +104,7 @@ const ctCORONAL: AppTypes.HangingProtocol.Viewport = {
 const ptAXIAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ptAXIAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     background: [1, 1, 1],
     orientation: 'axial',
     toolGroupId: 'ptToolGroup',
@@ -152,7 +152,7 @@ const ptAXIAL: AppTypes.HangingProtocol.Viewport = {
 const ptSAGITTAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ptSAGITTAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'sagittal',
     background: [1, 1, 1],
     toolGroupId: 'ptToolGroup',
@@ -196,7 +196,7 @@ const ptSAGITTAL: AppTypes.HangingProtocol.Viewport = {
 const ptCORONAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'ptCORONAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'coronal',
     background: [1, 1, 1],
     toolGroupId: 'ptToolGroup',
@@ -240,7 +240,7 @@ const ptCORONAL: AppTypes.HangingProtocol.Viewport = {
 const fusionAXIAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'fusionAXIAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'axial',
     toolGroupId: 'fusionToolGroup',
     initialImageOptions: {
@@ -303,7 +303,7 @@ const fusionAXIAL: AppTypes.HangingProtocol.Viewport = {
 const fusionSAGITTAL = {
   viewportOptions: {
     viewportId: 'fusionSAGITTAL',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'sagittal',
     toolGroupId: 'fusionToolGroup',
     // initialImageOptions: {
@@ -366,7 +366,7 @@ const fusionSAGITTAL = {
 const fusionCORONAL = {
   viewportOptions: {
     viewportId: 'fusionCoronal',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'coronal',
     toolGroupId: 'fusionToolGroup',
     // initialImageOptions: {
@@ -429,7 +429,7 @@ const fusionCORONAL = {
 const mipSAGITTAL: AppTypes.HangingProtocol.Viewport = {
   viewportOptions: {
     viewportId: 'mipSagittal',
-    viewportType: 'volume',
+    viewportType: 'stack',
     orientation: 'sagittal',
     background: [1, 1, 1],
     toolGroupId: 'mipToolGroup',
@@ -469,7 +469,7 @@ const mipSAGITTAL: AppTypes.HangingProtocol.Viewport = {
     {
       options: {
         blendMode: 'MIP',
-        slabThickness: 'fullVolume',
+        slabThickness: 'fullstack',
         voi: {
           custom: 'getPTVOIRange',
         },
