@@ -32,8 +32,8 @@
 /* Thumb styles for WebKit browsers - more specific selector */
 input[type='range'].scrollbarInput::-webkit-slider-thumb {
   -webkit-appearance: none !important;
-  background-color: hsl(var(--neutral));
-  opacity: 50%;
+  background-color: aqua;
+  /* opacity: 50%; */
   border: none;
   border-radius: 57px;
   cursor: -webkit-grab;
@@ -44,7 +44,7 @@ input[type='range'].scrollbarInput::-webkit-slider-thumb {
 
 input[type='range'].scrollbarInput::-webkit-slider-thumb:active,
 input[type='range'].scrollbarInput::-webkit-slider-thumb:hover {
-  background-color: hsl(var(--primary));
+  background-color: aqua;
   opacity: 60%;
   cursor: -webkit-grabbing;
 }
@@ -62,7 +62,7 @@ input[type='range'].scrollbarInput::-moz-range-thumb {
 
 input[type='range'].scrollbarInput::-moz-range-thumb:active,
 input[type='range'].scrollbarInput::-moz-range-thumb:hover {
-  background-color: hsl(var(--primary));
+  background-color: aqua;
   opacity: 50%;
   cursor: -moz-grabbing;
 }
@@ -99,11 +99,16 @@ input[type='range'].scrollbarInput::-moz-range-track {
   }
 
   .scrollbarInput {
-    left: 13px;
+    left: 11px;
   }
 
   input[type='range'].scrollbarInput::-webkit-slider-thumb {
     height: 23px;
-    width: 45px;
+    width: 43px;
+  }
+
+  input[type='range'].scrollbarInput::-webkit-slider-thumb:active,
+  input[type='range'].scrollbarInput::-webkit-slider-thumb:hover {
+    background-color: aqua;
   }
 }

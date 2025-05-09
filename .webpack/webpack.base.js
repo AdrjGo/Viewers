@@ -159,7 +159,7 @@ module.exports = (env, argv, { SRC_DIR, ENTRY }) => {
           type: 'asset/resource',
         },
         {
-          test: /\.(png|jpe?g|gif|svg)$/i,
+          test: /\.(png|jpe?g|gif|webp|svg)$/i,
           use: [
             {
               loader: 'file-loader',

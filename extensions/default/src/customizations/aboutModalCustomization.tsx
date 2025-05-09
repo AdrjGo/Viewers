@@ -5,7 +5,7 @@ import detect from 'browser-detect';
 function AboutModalDefault() {
   const { os, version, name } = detect();
   const browser = `${name[0].toUpperCase()}${name.substr(1)} ${version}`;
-  const versionNumber = '1.5.1';
+  const versionNumber = '1.9';
   const [main] = versionNumber.split('-');
   return (
     <>

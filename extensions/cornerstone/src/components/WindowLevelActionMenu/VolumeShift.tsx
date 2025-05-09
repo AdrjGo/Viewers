@@ -67,7 +67,7 @@ export function VolumeShift({
             onMouseUp={() => setIsBlocking(false)}
           >
             <div className="flex flex-row items-center">
-              <Numeric.Label className="w-16">Shift</Numeric.Label>
+              <Numeric.Label className="w-16">Variación</Numeric.Label>
               <Numeric.SingleRange sliderClassName="mx-2 flex-grow" />
             </div>
           </Numeric.Container>

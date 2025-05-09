@@ -13,10 +13,10 @@ export default {
       title: 'Logo de la Empresa',
       contentF: () => (
         <Icons.LogoClient
-          className="h-20 object-cover p-2"
+          className="object-cover max-sm:h-16 sm:h-[70px]"
           src={clientLogosSmall[customerKey]}
           style={{
-            filter: 'drop-shadow(0 0 2px white) drop-shadow(0 0 4px white)',
+            filter: 'drop-shadow(0 0 2px white) drop-shadow(0 0 1px white)',
           }}
         />
       ),

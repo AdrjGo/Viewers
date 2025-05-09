@@ -51,7 +51,7 @@ export function VolumeRenderingQuality({
             onChange={onChange}
           >
             <div className="flex flex-row items-center">
-              <Numeric.Label className="w-16">Quality</Numeric.Label>
+              <Numeric.Label className="w-16">Calidad</Numeric.Label>
               <Numeric.SingleRange sliderClassName="mx-2 flex-grow" />
             </div>
           </Numeric.Container>

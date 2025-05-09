@@ -4,14 +4,14 @@ const colormaps = [
     Name: 'Grayscale',
     NanColor: [1, 0, 0],
     RGBPoints: [0, 0, 0, 0, 1, 1, 1, 1],
-    description: 'Grayscale',
+    description: 'Escala de grises',
   },
   {
     ColorSpace: 'RGB',
     Name: 'X Ray',
     NanColor: [1, 0, 0],
     RGBPoints: [0, 1, 1, 1, 1, 0, 0, 0],
-    description: 'X Ray',
+    description: 'Rayos X',
   },
   {
     ColorSpace: 'RGB',
@@ -215,7 +215,7 @@ const colormaps = [
       0.9450980392, 0.996078431372549, 0.9960784314, 0.9960784314, 0.9607843137, 1.0, 0.9960784314,
       0.9960784314, 0.9607843137,
     ],
-    description: 'Hot Iron',
+    description: 'Hierro caliente',
   },
   {
     ColorSpace: 'RGB',
@@ -349,7 +349,7 @@ const colormaps = [
       1.0, 1.0, 0.9882352941176471, 1.0, 1.0, 1.0, 0.9921568627450981, 1.0, 1.0, 1.0,
       0.996078431372549, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
     ],
-    description: 'Red Hot',
+    description: 'Al rojo vivo',
   },
   {
     ColorSpace: 'RGB',
@@ -721,7 +721,7 @@ const colormaps = [
       0.5882352941, 0.9921568627450981, 0.9960784314, 0.9803921569, 0.6431372549, 0.996078431372549,
       0.9960784314, 0.9882352941, 0.6980392157, 1.0, 0.9960784314, 0.9960784314, 0.7450980392,
     ],
-    description: 'Perfusion',
+    description: 'Perfusión',
   },
   {
     ColorSpace: 'RGB',
@@ -859,7 +859,7 @@ const colormaps = [
       0.9882352941176471, 1.0, 0.0666666667, 0.0, 0.9921568627450981, 1.0, 0.0470588235, 0.0,
       0.996078431372549, 1.0, 0.031372549, 0.0, 1.0, 1.0, 0.0, 0.0,
     ],
-    description: 'Rainbow',
+    description: 'Arcoiris',
   },
   {
     ColorSpace: 'RGB',

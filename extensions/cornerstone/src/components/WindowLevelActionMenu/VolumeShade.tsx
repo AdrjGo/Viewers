@@ -29,7 +29,7 @@ export function VolumeShade({
 
   return (
     <>
-      <span className="flex-grow">Shade</span>
+      <span className="flex-grow">Sombra</span>
       <Switch
         className="ml-2 flex-shrink-0"
         key={key}

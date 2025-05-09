@@ -112,10 +112,10 @@ const Thumbnail = ({
 
             {/* top right */}
             <div className="absolute top-0 right-0 flex items-center gap-[4px]">
-              <DisplaySetMessageListTooltip
+              {/* <DisplaySetMessageListTooltip
                 messages={messages}
                 id={`display-set-tooltip-${displaySetInstanceUID}`}
-              />
+              /> */}
               {isTracked && (
                 <Tooltip>
                   <TooltipTrigger>

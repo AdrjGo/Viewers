@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Icons } from '../Icons';
 import { TooltipTrigger, TooltipContent, Tooltip } from '../Tooltip';
 import { Separator } from '../Separator';
+import { useSearchParams } from 'react-router-dom';
 
 /**
  * SidePanel component properties.
@@ -196,6 +197,9 @@ const SidePanel = ({
 }: SidePanelProps) => {
   const [panelOpen, setPanelOpen] = useState(isExpanded);
   const [activeTabIndex, setActiveTabIndex] = useState(activeTabIndexProp ?? 0);
+  const [params] = useSearchParams();
+  const customerKey = params.get('customerKey');
+  const isMobile = window.innerWidth < 640
 
   const [styleMap, setStyleMap] = useState(
     createStyleMap(
@@ -281,6 +285,7 @@ const SidePanel = ({
 
   const getCloseStateComponent = () => {
     const _childComponents = Array.isArray(tabs) ? tabs : [tabs];
+
     return (
       <>
         <div
@@ -294,7 +299,11 @@ const SidePanel = ({
           data-cy={`side-panel-header-${side}`}
         >
           <Icons.NavigationPanelReveal
-            className={classnames('text-primary', side === 'left' && 'rotate-180 transform')}
+            className={classnames(
+              'text-primary',
+              side === 'left' && 'rotate-180 transform',
+              customerKey === '528' && isMobile && 'rotate-0'
+            )}
           />
         </div>
         <div className={classnames('mt-3 flex flex-col space-y-3')}>
@@ -343,7 +352,8 @@ const SidePanel = ({
       <div
         className={classnames(
           'absolute flex cursor-pointer items-center justify-center',
-          side === 'left' ? 'right-0' : 'left-0'
+          side === 'left' ? 'right-0' : 'left-0',
+          customerKey === '528' && panelOpen === true && isMobile && 'rotate-180'
         )}
         style={{ width: `${closeIconWidth}px` }}
         onClick={() => {

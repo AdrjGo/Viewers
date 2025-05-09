@@ -199,7 +199,7 @@ import ArrowRight from './Sources/ArrowRight';
 import ChevronLeft from './Sources/ChevronLeft';
 import StatusAlert from './Sources/StatusAlert';
 import Undo from './Sources/Undo';
-import RadoViewerLogo from '../../../../app/public/assets/RadoViewerLogo.png';
+import RadoViewerLogo from '../../../../app/public/assets/RadoViewerLogo.webp';
 import RadoViewerLogoSmall from '../../../../app/public/assets/RadoViewerLogoSmall.png';
 import MedespacioLogoPeq from '../../../../app/public/assets/MedespacioLogoPeq.png';
 import classNames from 'classnames';
